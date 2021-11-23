@@ -1,0 +1,70 @@
+
+
+   ---- Transcoding 'D:\User\Desktop\New Drone\Gerber\copper_top.gtl' ----   Sat Jun 02 14:46:23 2018
+
+D12   --> D100
+D13   --> D101
+D14   --> D102
+D15   --> D103
+D16   --> D104
+D17   --> D105
+D18   --> D106
+D19   --> D107
+D20   --> D108
+D21   --> D109
+D22   --> D110
+D23   --> D111
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\New Drone\Gerber\profile.gko' ----   Sat Jun 02 14:46:25 2018
+
+D10   --> D112
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\New Drone\Gerber\silkscreen_bottom.gbo' ----   Sat Jun 02 14:46:25 2018
+
+D10   --> D113
+D11   --> D114
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\New Drone\Gerber\silkscreen_top.gto' ----   Sat Jun 02 14:46:25 2018
+
+D10   --> D115
+D11   --> D116
+D12   --> D117
+D13   --> D118
+D14   --> D119
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\New Drone\Gerber\soldermask_bottom.gbs' ----   Sat Jun 02 14:46:25 2018
+
+D10   --> D120
+D11   --> D121
+D12   --> D122
+D13   --> D123
+D14   --> D124
+D15   --> D125
+D16   --> D126
+D17   --> D127
+D18   --> D128
+D19   --> D129
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\New Drone\Gerber\soldermask_top.gts' ----   Sat Jun 02 14:46:25 2018
+
+D10   --> D130
+D11   --> D131
+D12   --> D132
+D13   --> D133
+D14   --> D134
+D15   --> D135
+D16   --> D136
+D17   --> D137
+D18   --> D138
+D19   --> D139
+-----------------------------------------------------------------

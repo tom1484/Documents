@@ -1,0 +1,8 @@
+7
+insert 4
+insert 10
+insert 5
+query 7
+delete 5
+query 7
+query 10

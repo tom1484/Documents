@@ -1,0 +1,138 @@
+<mujoco>
+
+    <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
+    <option integrator="RK4" timestep="0.01"/>
+
+    <default>
+        <joint type="hinge" armature="1" damping="1" limited="true"/>
+        <motor ctrllimited="true" ctrlrange="-1 1" gear="30"/>
+        <geom conaffinity="0" condim="3" density="5.0" friction="1 0.5 0.5" margin="0.005" rgba="0.8 0.6 0.4 1"/>
+    </default>
+
+    <asset>
+        <texture builtin="gradient" height="100" rgb1="1 1 1" rgb2="0 0 0" type="skybox" width="100"/>
+        <texture builtin="flat" height="1278" mark="cross" markrgb="1 1 1" name="texgeom" random="0.01" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" type="cube" width="127"/>
+        <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
+        <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
+    </asset>
+
+    <worldbody>
+        <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/>
+        <geom conaffinity="1" condim="3" material="MatPlane" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="5 5 5" type="plane"/>
+
+        <body name="spyder" pos="0 0 0.3" euler="0 0 0">
+
+            <freejoint/>
+            <geom type="box" pos="0 0 0" size="0.16 0.08 0.025"/>
+            <body name="leg0" pos="0.14 0.105 0" euler="0 0 0">
+                <body name="thigh0" pos="0 0 0">
+
+                    <joint name="thigh0_z" pos="0 0 0" axis="0 0 1" range="-35 35"/>
+                    <joint name="thigh0_y" pos="0 0 0" axis="-1 0 0" range="-70 70"/>
+                    <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+                    <body name="calf0" pos="0 0.1 0" euler="0 0 0">
+
+                      <joint name="calf0_y" pos="0 0 0" axis="-1 0 0" range="0 120"/>
+                      <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+
+                    </body>
+                </body>
+            </body>
+            <body name="leg1" pos="0.14 -0.105 0" euler="0 0 180">
+                <body name="thigh1" pos="0 0 0">
+
+                    <joint name="thigh1_z" pos="0 0 0" axis="0 0 -1" range="-35 35"/>
+                    <joint name="thigh1_y" pos="0 0 0" axis="-1 0 0" range="-70 70"/>
+                    <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+                    <body name="calf1" pos="0 0.1 0" euler="0 0 0">
+
+                      <joint name="calf1_y" pos="0 0 0" axis="-1 0 0" range="0 120"/>
+                      <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+
+                    </body>
+                </body>
+            </body>
+            <body name="leg2" pos="0 0.105 0" euler="0 0 0">
+                <body name="thigh2" pos="0 0 0">
+
+                    <joint name="thigh2_z" pos="0 0 0" axis="0 0 1" range="-35 35"/>
+                    <joint name="thigh2_y" pos="0 0 0" axis="-1 0 0" range="-70 70"/>
+                    <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+                    <body name="calf2" pos="0 0.1 0" euler="0 0 0">
+
+                      <joint name="calf2_y" pos="0 0 0" axis="-1 0 0" range="0 120"/>
+                      <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+
+                    </body>
+                </body>
+            </body>
+            <body name="leg3" pos="0 -0.105 0" euler="0 0 180">
+                <body name="thigh3" pos="0 0 0">
+
+                    <joint name="thigh3_z" pos="0 0 0" axis="0 0 -1" range="-35 35"/>
+                    <joint name="thigh3_y" pos="0 0 0" axis="-1 0 0" range="-70 70"/>
+                    <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+                    <body name="calf3" pos="0 0.1 0" euler="0 0 0">
+
+                      <joint name="calf3_y" pos="0 0 0" axis="-1 0 0" range="0 120"/>
+                      <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+
+                    </body>
+                </body>
+            </body>
+            <body name="leg4" pos="-0.14 0.105 0" euler="0 0 0">
+                <body name="thigh4" pos="0 0 0">
+
+                    <joint name="thigh4_z" pos="0 0 0" axis="0 0 1" range="-35 35"/>
+                    <joint name="thigh4_y" pos="0 0 0" axis="-1 0 0" range="-70 70"/>
+                    <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+                    <body name="calf4" pos="0 0.1 0" euler="0 0 0">
+
+                      <joint name="calf4_y" pos="0 0 0" axis="-1 0 0" range="0 120"/>
+                      <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+
+                    </body>
+                </body>
+            </body>
+            <body name="leg5" pos="-0.14 -0.105 0" euler="0 0 180">
+                <body name="thigh5" pos="0 0 0">
+
+                    <joint name="thigh5_z" pos="0 0 0" axis="0 0 -1" range="-35 35"/>
+                    <joint name="thigh5_y" pos="0 0 0" axis="-1 0 0" range="-70 70"/>
+                    <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+                    <body name="calf5" pos="0 0.1 0" euler="0 0 0">
+
+                      <joint name="calf5_y" pos="0 0 0" axis="-1 0 0" range="0 120"/>
+                      <geom type="capsule" fromto="0 0 0 0 0.1 0" size="0.015"/>
+
+                    </body>
+                </body>
+            </body>
+        </body>
+
+    </worldbody>
+
+    <actuator>
+        <motor name="thigh0_y_motor" joint="thigh0_y"/>
+        <motor name="thigh1_y_motor" joint="thigh1_y"/>
+        <motor name="thigh2_y_motor" joint="thigh2_y"/>
+        <motor name="thigh3_y_motor" joint="thigh3_y"/>
+        <motor name="thigh4_y_motor" joint="thigh4_y"/>
+        <motor name="thigh5_y_motor" joint="thigh5_y"/>
+
+        <motor name="thigh0_z_motor" joint="thigh0_z"/>
+        <motor name="thigh1_z_motor" joint="thigh1_z"/>
+        <motor name="thigh2_z_motor" joint="thigh2_z"/>
+        <motor name="thigh3_z_motor" joint="thigh3_z"/>
+        <motor name="thigh4_z_motor" joint="thigh4_z"/>
+        <motor name="thigh5_z_motor" joint="thigh5_z"/>
+
+        <motor name="calf0_y_motor" joint="calf0_y"/>
+        <motor name="calf1_y_motor" joint="calf1_y"/>
+        <motor name="calf2_y_motor" joint="calf2_y"/>
+        <motor name="calf3_y_motor" joint="calf3_y"/>
+        <motor name="calf4_y_motor" joint="calf4_y"/>
+        <motor name="calf5_y_motor" joint="calf5_y"/>
+    </actuator>
+
+</mujoco>

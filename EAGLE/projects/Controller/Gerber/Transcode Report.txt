@@ -1,0 +1,61 @@
+
+
+   ---- Transcoding 'D:\User\Desktop\Controller\Gerber\copper_top.gtl' ----   Sat Jun 02 14:47:49 2018
+
+D12   --> D100
+D13   --> D101
+D14   --> D102
+D15   --> D103
+D16   --> D104
+D18   --> D105
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\Controller\Gerber\profile.gko' ----   Sat Jun 02 14:47:51 2018
+
+D10   --> D106
+D11   --> D107
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\Controller\Gerber\silkscreen_bottom.gbo' ----   Sat Jun 02 14:47:51 2018
+
+D10   --> D108
+D11   --> D109
+D12   --> D110
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\Controller\Gerber\silkscreen_top.gto' ----   Sat Jun 02 14:47:51 2018
+
+D10   --> D111
+D11   --> D112
+D12   --> D113
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\Controller\Gerber\soldermask_bottom.gbs' ----   Sat Jun 02 14:47:51 2018
+
+D10   --> D114
+D11   --> D115
+D12   --> D116
+D13   --> D117
+D14   --> D118
+D15   --> D119
+D16   --> D120
+D17   --> D121
+-----------------------------------------------------------------
+
+
+   ---- Transcoding 'D:\User\Desktop\Controller\Gerber\soldermask_top.gts' ----   Sat Jun 02 14:47:51 2018
+
+D10   --> D122
+D11   --> D123
+D12   --> D124
+D13   --> D125
+D14   --> D126
+D15   --> D127
+D16   --> D128
+D17   --> D129
+D18   --> D130
+-----------------------------------------------------------------

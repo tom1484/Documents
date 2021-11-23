@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Greeting	src/hello/const.go	/^    Greeting = "Hi!"$/;"	c
+Hello	src/hello/hello.go	/^func Hello() {$/;"	f
+hello	src/hello/const.go	/^package hello$/;"	p
+hello	src/hello/hello.go	/^package hello$/;"	p
+main	src/main/main.go	/^func main() {$/;"	f
+main	src/main/main.go	/^package main$/;"	p
+test	src/main/main.go	/^func test() {$/;"	f
+test1	src/main/main.go	/^func test1() {$/;"	f
