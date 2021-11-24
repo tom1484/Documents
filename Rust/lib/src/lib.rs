@@ -9,10 +9,10 @@ pub mod test1 {
     }
 }
 
-pub use test1::submod1;
+// pub use test1::submod1;
 
 pub fn test_func() {
     // println!("{}", 123);
     // println!("{}", 123);
-    submod1::submod_test1();
+    test1::submod1::submod_test1();
 }
