@@ -13,8 +13,8 @@ while True:
     rate(1000)
     t += dt
     ball_pos[0] = A * sin(omega * t ) #4
-    spring_len[:-1] =
-    ## ball_v[1:] += #6
+    spring_len[:-1] = ball_pos[1:] - ball_pos[:-1]
+    ball_v[1:] += ((spring_len[1:] - d) * k/m - (spring_len[:-1] - d) * k/m) * dt
     ball_pos += ball_v*dt
     for i in range(N): balls[i].pos.x = ball_pos[i] #3
     for i in range(N-1): #3
