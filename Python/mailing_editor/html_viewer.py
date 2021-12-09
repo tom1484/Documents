@@ -4,10 +4,11 @@ import sys
 import os
 # import site
 # site.addsitedir('/usr/local/lib/python2.7/site-packages')
-from PyQt5 import QtCore, QtWidgets, QtWebEngineWidgets
+from PyQt5 import QtCore, QtWidgets
+import PyQtWebEngine
 
 app = QtWidgets.QApplication(sys.argv)
-view = QtWebEngineWidgets.QWebEngineView()
+view = PyQtWebEngine.QWebEngineView()
 
 # view.settings().setAttribute(QtWebEng.QWebSettings.LocalContentCanAccessRemoteUrls, True)
 
