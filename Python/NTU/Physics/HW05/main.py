@@ -84,9 +84,6 @@ while True:
         total_v_P += CO.v_P()
         total_r_K += CO.r_K()
 
-    # print(f"{total_com_K}, {total_v_K}, {total_v_P}, {total_r_K}")
-    print(total_com_K + total_v_K + total_v_P + total_r_K)
-
     avg_com_K = (avg_com_K * t + total_com_K * dt) / (t + dt)
     avg_v_K = (avg_v_K * t + total_v_K * dt) / (t + dt)
     avg_v_P = (avg_v_P * t + total_v_P * dt) / (t + dt)
