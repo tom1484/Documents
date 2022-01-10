@@ -56,7 +56,7 @@ def collision(a1, a2):
     v2prime = a2.v - 2 * a1.m / (a1.m + a2.m) * (a2.pos - a1.pos) * dot(a2.v - a1.v, a2.pos - a1.pos) / mag(
         a2.pos - a1.pos) ** 2
     return v1prime, v2prime
-
+# v1 - 2 * (p1 - p2) * dot(v1 - v2, p1 - p2) / (p1 - p2)^2
 
 if __name__ == '__main__':
     a = CO_molecule(pos=vector(0, 0, 0), axis=vector(2.6 * size, 0, 0))
