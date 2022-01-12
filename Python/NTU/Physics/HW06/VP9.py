@@ -54,8 +54,8 @@ def print_params():
     T = 0.5 * m * np.sum(v_a ** 2) / (1.5 * N * k)
     print(f"Temperature: {T}")
 
-    # P = pulse / (1000 * dt) / (container.length * L * 4 + 2 * L * L)
-    P = pulse / (1000 * dt) / (6 * L * L)
+    P = pulse / (1000 * dt) / (container.length * L * 4 + 2 * L * L)
+    # P = pulse / (1000 * dt) / (L * L)
     print(f"Pressure   : {P}")
     pulse = 0
 
@@ -115,18 +115,16 @@ while True:
 
     # find collisions between the atoms and the walls, and handle their elastic collisions
     for i in range(N):
+        v0 = np.array([v_a[i][0], v_a[i][1], v_a[i][2]])
         if abs(p_a[i][0]) >= container.length / 2 - size and p_a[i][0]*v_a[i][0] > 0:
-            # v_prime = - v_a[i][0] - (2 * v_W if v_a[i][0] > 0 else -2 * v_W)
-            # pulse += abs(v_prime - v_a[i][0]) * m
-            # v_a[i][0] = v_prime
-            v_a[i][0] = - v_a[i][0]
-            pulse += abs(2 * v_a[i][0]) * m
+            v_prime = - v_a[i][0] - (2 * v_W if v_a[i][0] > 0 else -2 * v_W)
+            v_a[i][0] = v_prime
         if abs(p_a[i][1]) >= L - size and p_a[i][1]*v_a[i][1] > 0:
             v_a[i][1] = - v_a[i][1]
-            pulse += abs(2 * v_a[i][1]) * m
         if abs(p_a[i][2]) >= L - size and p_a[i][2]*v_a[i][2] > 0:
             v_a[i][2] = - v_a[i][2]
-            pulse += abs(2 * v_a[i][2]) * m
+
+        pulse += np.sum(np.abs(v0 - v_a[i])) * m
 
     cnt += 1
 
