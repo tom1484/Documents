@@ -51,16 +51,22 @@ def print_params():
     global stage, container, v_a, pulse
     print(f"Stage      : {stage}")
 
-    T = 0.5 * m * np.sum(v_a ** 2) / (1.5 * N * k)
-    print(f"Temperature: {T}")
+    Temp = 0.5 * m * np.sum(v_a ** 2) / (1.5 * N * k)
+    print(f"Temperature: {Temp}")
 
-    P = pulse / (1000 * dt) / (container.length * L * 4 + 2 * L * L)
+    Pres = pulse / (1000 * dt) / (container.length * (2 * L) * 4 + 2 * (2 * L) * (2 * L))
     # P = pulse / (1000 * dt) / (L * L)
-    print(f"Pressure   : {P}")
+    print(f"Pressure   : {Pres}")
     pulse = 0
 
-    V = container.length * container.width * container.height
-    print(f"Volume     : {V}")
+    Vol = container.length * container.width * container.height
+    print(f"Volume     : {Vol}")
+
+    print(f"PV         : {Pres * Vol}")
+
+    print(f"NkT        : {N * k * Temp}")
+
+    print(f"PV^gamma   : {Pres * (Vol ** (5 / 3))}")
 
     print()
 
