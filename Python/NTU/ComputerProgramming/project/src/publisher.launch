@@ -1,0 +1,4 @@
+<launch>
+    <node name="clock" pkg="project" type="clock_publisher.py" />
+    <node name="pubisher" pkg="project" type="publisher.py" />    
+</launch>
