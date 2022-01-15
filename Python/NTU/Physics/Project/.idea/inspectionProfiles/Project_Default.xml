@@ -36,6 +36,7 @@
       </option>
     </inspection_tool>
     <inspection_tool class="PyRedeclarationInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyRedundantParenthesesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PySingleQuotedDocstringInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyUnreachableCodeInspection" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -46,6 +47,12 @@
           <option value="vpython.vpython.sphere.v" />
           <option value="vpython.vpython.sphere.m" />
           <option value="main.vpython" />
+          <option value="vpython.vpython.cylinder.b0" />
+          <option value="vpython.vpython.cylinder.L" />
+          <option value="vpython.vpython.cylinder.b1" />
+          <option value="vpython.vpython.cylinder.axis_origin" />
+          <option value="main.vec" />
+          <option value="main.spring_acc_x" />
         </list>
       </option>
     </inspection_tool>
