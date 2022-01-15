@@ -65,7 +65,7 @@ Y_modulus = 2e12
 # G_modulus = 1e8
 G_modulus = 1e12
 
-N = 10
+N = 5
 r_N = 2 * N + 1  # slice radius to N segments, therefore 2N+1 points are required
 
 sun_m = 1.989e30
@@ -140,17 +140,17 @@ while True:
     slice_a += spring_a[2] * spring_valid_z_p - \
                np.pad(spring_a[2], padding[2][1])[:, :, :-1] * spring_valid_z_n
 
-    if cnt < 10000:
+    if cnt < 5000:
         slice_a -= 0.1 * slice_v
-    elif cnt == 10000:
+    elif cnt == 5000:
         slice_pos += vec(planet_R, 0, 0)
         slice_v += vec(0, 0, planet_v)
     else:
         slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
 
     if cnt % 1000 == 0:
-        plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0],
-                    (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
+        plt.scatter((slice_pos[:, N, :, 0] - cm[0]) * slice_valid[:, N, :, 0],
+                    (slice_pos[:, N, :, 2] - cm[2]) * slice_valid[:, N, :, 0])
         plt.xlim(-planet_r * 1.2, planet_r * 1.2)
         plt.ylim(-planet_r * 1.2, planet_r * 1.2)
         plt.draw()
