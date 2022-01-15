@@ -4,9 +4,11 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 import vpython as vp
-import numpy as np
+# import numba as nb
+import cupy as np
+# import numpy as np
 
-import matplotlib.pyplot as plt
+import time
 
 
 def vec(v0, v1, v2) -> np.ndarray:
@@ -34,44 +36,57 @@ def project(V1, V2) -> np.ndarray:
 
 
 def G_acc(src_pos, obj_pos, src_m) -> np.ndarray:
-    return -(G * src_m / (mag(obj_pos - src_pos) ** 3)) * (obj_pos - src_pos)
+    r = obj_pos - src_pos
+    return -(G * src_m / (np.sqrt(np.sum(r * r, axis=-1, keepdims=True)) ** 3)) * r
 
 
 def G_acc_inner(src_pos, obj_pos, src_m, src_r) -> np.ndarray:
     return -(G * src_m / (src_r ** 3)) * (obj_pos - src_pos)
 
 
+# np.sqrt(np.sum(V * V, axis=-1, keepdims=True))
+# np.sum(V * V, axis=-1, keepdims=True)
 def Y_acc_x(obj_pos, origin_axis, obj_m):
     spring_axis_ = np.concatenate((obj_pos[1:], obj_pos[:1]), axis=0) - obj_pos
     spring_axis_px = project(spring_axis_, origin_axis)
+    spring_axis_px = np.sum(spring_axis_ * origin_axis, axis=-1, keepdims=True) / \
+                     np.sum(origin_axis * origin_axis, axis=-1, keepdims=True) * origin_axis
     spring_axis_py = spring_axis_ - spring_axis_px
 
-    force_x = Y_modulus * spring_L * (mag(spring_axis_px) - spring_L) * norm(origin_axis) + \
+    force = Y_modulus * spring_L * \
+              (np.sqrt(np.sum(spring_axis_px * spring_axis_px, axis=-1, keepdims=True)) - spring_L) * \
+              origin_axis / np.sqrt(np.sum(origin_axis * origin_axis, axis=-1, keepdims=True)) + \
               G_modulus * spring_L * spring_axis_py
 
-    return force_x / obj_m
+    return force / obj_m
 
 
 def Y_acc_y(obj_pos, origin_axis, obj_m):
     spring_axis_ = np.concatenate((obj_pos[:, 1:], obj_pos[:, :1]), axis=1) - obj_pos
-    spring_axis_px = project(spring_axis_, origin_axis)
+    spring_axis_px = np.sum(spring_axis_ * origin_axis, axis=-1, keepdims=True) / \
+                     np.sum(origin_axis * origin_axis, axis=-1, keepdims=True) * origin_axis
     spring_axis_py = spring_axis_ - spring_axis_px
 
-    force_y = Y_modulus * spring_L * (mag(spring_axis_px) - spring_L) * norm(origin_axis) + \
-              G_modulus * spring_L * spring_axis_py
+    force = Y_modulus * spring_L * \
+            (np.sqrt(np.sum(spring_axis_px * spring_axis_px, axis=-1, keepdims=True)) - spring_L) * \
+            origin_axis / np.sqrt(np.sum(origin_axis * origin_axis, axis=-1, keepdims=True)) + \
+            G_modulus * spring_L * spring_axis_py
 
-    return force_y / obj_m
+    return force / obj_m
 
 
 def Y_acc_z(obj_pos, origin_axis, obj_m):
     spring_axis_ = np.concatenate((obj_pos[:, :, 1:], obj_pos[:, :, :1]), axis=2) - obj_pos
-    spring_axis_px = project(spring_axis_, origin_axis)
+    spring_axis_px = np.sum(spring_axis_ * origin_axis, axis=-1, keepdims=True) / \
+                     np.sum(origin_axis * origin_axis, axis=-1, keepdims=True) * origin_axis
     spring_axis_py = spring_axis_ - spring_axis_px
 
-    force_z = Y_modulus * spring_L * (mag(spring_axis_px) - spring_L) * norm(origin_axis) + \
-              G_modulus * spring_L * spring_axis_py
+    force = Y_modulus * spring_L * \
+            (np.sqrt(np.sum(spring_axis_px * spring_axis_px, axis=-1, keepdims=True)) - spring_L) * \
+            origin_axis / np.sqrt(np.sum(origin_axis * origin_axis, axis=-1, keepdims=True)) + \
+            G_modulus * spring_L * spring_axis_py
 
-    return force_z / obj_m
+    return force / obj_m
 
 
 G = 6.6743e-11
@@ -135,6 +150,10 @@ spring_valid_z_p = np.concatenate((slice_valid[:, :, 1:], np.zeros(((r_N, r_N, 1
 spring_valid_z_n = np.concatenate((np.zeros(((r_N, r_N, 1, 1))), slice_valid[:, :, :-1]), axis=2)
 
 
+# spring_acc_y = Y_acc_y(slice_pos, spring_axis[1], slice_m) * spring_valid_y
+# spring_acc_z = Y_acc_z(slice_pos, spring_axis[2], slice_m) * spring_valid_z
+
+
 def launch():
     global slice_pos, slice_v
 
@@ -143,13 +162,19 @@ def launch():
 
 
 cnt = 0
+# fig = plt.figure()
+# ax = fig.add_subplot(111)
+# ax.set_aspect('equal')
 
 t = 0
 dt = 10
 while True:
-    vp.rate(5000)
+    # vp.rate(5000)
+
+    s = time.time()
 
     cm = np.sum(slice_pos * slice_valid, axis=(0, 1, 2)) / slice_N
+    # print(cm)
     slice_a = G_acc_inner(cm, slice_pos, planet_m, planet_r) * slice_valid
 
     # calculate spring force
@@ -170,18 +195,22 @@ while True:
 
     if cnt < 10000:
         slice_a -= 0.1 * slice_v
-    elif cnt == 10000:
-        launch()
-    else:
-        slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
+    # elif cnt == 10000:
+        # launch()
+    # else:
+    #     slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
 
-    if cnt % 1000 == 0:
-        plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0], (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
-        plt.xlim(-planet_r * 1.2, planet_r * 1.2)
-        plt.ylim(-planet_r * 1.2, planet_r * 1.2)
-        plt.draw()
-        plt.pause(0.01)
-        plt.clf()
+    # if cnt % 1000 == 0:
+    #     plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0], (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
+    #     plt.xlim(-planet_r * 1.2, planet_r * 1.2)
+    #     plt.ylim(-planet_r * 1.2, planet_r * 1.2)
+    #     plt.draw()
+    #     plt.pause(0.01)
+    #     plt.clf()
+        # g.clear()
+        # g.scatter(slice_pos[:, 5, :, 0], slice_pos[:, 5, :, 2])
+        # plt.show()
+        # time.sleep(2)
 
     slice_v += slice_a * dt
     slice_pos += slice_v * dt
@@ -189,4 +218,11 @@ while True:
     t += dt
     cnt += 1
 
-    print(slice_pos[N, N, 2 * N], t)
+    # print((np.concatenate((np.zeros(((1, r_N, r_N, 3))), spring_ax[:-1]), axis=0) * spring_valid_x_n)[10, 5, 5])
+    # print((np.concatenate((np.zeros(((1, r_N, r_N, 3))), spring_ax[:-1]), axis=0) * spring_valid_x_n)[10, 5, 5])
+    # print((spring_ax * spring_valid_x_p - np.concatenate((np.zeros(((1, r_N, r_N, 3))), spring_ax[:-1]), axis=0) * spring_valid_x_n)[10, 5, 5])
+    # print(slice_pos[N, N, 2 * N], t)
+    print(time.time() - s)
+    # if t > 100000:
+    #     break
+    # print(t)
