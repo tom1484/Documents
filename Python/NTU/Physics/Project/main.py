@@ -175,13 +175,13 @@ while True:
     else:
         slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
 
-    if cnt % 1000 == 0:
-        plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0], (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
-        plt.xlim(-planet_r * 1.2, planet_r * 1.2)
-        plt.ylim(-planet_r * 1.2, planet_r * 1.2)
-        plt.draw()
-        plt.pause(0.01)
-        plt.clf()
+    # if cnt % 10000 == 0:
+    #     plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0], (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
+    #     plt.xlim(-planet_r * 1.2, planet_r * 1.2)
+    #     plt.ylim(-planet_r * 1.2, planet_r * 1.2)
+    #     plt.draw()
+    #     plt.pause(0.01)
+    #     plt.clf()
 
     slice_v += slice_a * dt
     slice_pos += slice_v * dt
@@ -189,4 +189,5 @@ while True:
     t += dt
     cnt += 1
 
-    print(slice_pos[N, N, 2 * N], t)
+    if cnt % 1000 == 0:
+        print(slice_pos[N, N, 2 * N], t)
