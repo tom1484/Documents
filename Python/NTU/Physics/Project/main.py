@@ -83,13 +83,15 @@ G_modulus = 1e12
 N = 5
 r_N = 2 * N + 1
 
-planet_r = 6.371e6 * 1.0605
-planet_R = 1.496e11
-planet_m = 5.972e24
-planet_v = 2.9783E4
-
 sun_m = 1.989e30
 sun_r = 6.95E8
+
+planet_r = 6.371e6 * 1.0605
+planet_m = 5.972e24
+# planet_R = 1.496e11
+planet_R = sun_r
+# planet_v = 2.9783E4
+planet_v = np.sqrt(G * sun_m / planet_R)
 
 slice_valid = np.ndarray((r_N, r_N, r_N, 1), dtype=np.int8)
 
@@ -175,13 +177,13 @@ while True:
     else:
         slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
 
-    # if cnt % 10000 == 0:
-    #     plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0], (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
-    #     plt.xlim(-planet_r * 1.2, planet_r * 1.2)
-    #     plt.ylim(-planet_r * 1.2, planet_r * 1.2)
-    #     plt.draw()
-    #     plt.pause(0.01)
-    #     plt.clf()
+    if cnt % 1000 == 0:
+        plt.scatter((slice_pos[:, 5, :, 0] - cm[0]) * slice_valid[:, 5, :, 0], (slice_pos[:, 5, :, 2] - cm[2]) * slice_valid[:, 5, :, 0])
+        plt.xlim(-planet_r * 1.2, planet_r * 1.2)
+        plt.ylim(-planet_r * 1.2, planet_r * 1.2)
+        plt.draw()
+        plt.pause(0.01)
+        plt.clf()
 
     slice_v += slice_a * dt
     slice_pos += slice_v * dt
