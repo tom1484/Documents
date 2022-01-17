@@ -53,17 +53,17 @@ def spring_acc(obj_pos, origin_axis, obj_m) -> np.ndarray:
     spring_axis_px = project(spring_axis_new, origin_axis)
     spring_axis_py = spring_axis_new - spring_axis_px
 
-    force = Y_modulus * spring_L * (mag(spring_axis_px) - spring_L) * norm(origin_axis) + \
-            G_modulus * spring_L * spring_axis_py
+    force_Y = Y_modulus * spring_L * (mag(spring_axis_px) - spring_L) * norm(origin_axis)
+    force_G = G_modulus * spring_L * spring_axis_py
 
-    return force / obj_m
+    return force_Y / obj_m, force_G / obj_m
 
 
 G = 6.6743e-11
-# Y_modulus = 2e8
-Y_modulus = 2e12
-# G_modulus = 1e8
-G_modulus = 1e12
+Y_modulus = 2e8
+# Y_modulus = 2e12
+G_modulus = 1e8
+# G_modulus = 1e12
 
 N = 5
 r_N = 2 * N + 1  # slice radius to N segments, therefore 2N+1 points are required
@@ -71,10 +71,10 @@ r_N = 2 * N + 1  # slice radius to N segments, therefore 2N+1 points are require
 sun_m = 1.989e30
 sun_r = 6.95E8
 
-planet_r = 6.371e6 * 1.0605
+planet_r = 6.371e6 * 3.6138
 planet_m = 5.972e24
 # planet_R = 1.496e11
-planet_R = sun_r  # test extremely close distance
+planet_R = sun_r * 3  # test extremely close distance
 planet_v = np.sqrt(G * sun_m / planet_R)
 
 # 1s for balls inside planet, 0s for others
@@ -131,7 +131,10 @@ while True:
     cm = np.sum(slice_pos * slice_valid, axis=(0, 1, 2)) / slice_N  # center of mass of planet
     slice_a = G_acc_inner(cm, slice_pos, planet_m, planet_r) * slice_valid
 
-    spring_a = spring_acc(slice_pos, spring_axis, slice_m)
+    spring_a_Y, spring_a_G = spring_acc(slice_pos, spring_axis, slice_m)
+
+    
+    spring_a = sprnig_a_Y + spring_a_G
     # spring forces are from both direction
     slice_a += spring_a[0] * spring_valid_x_p - \
                np.pad(spring_a[0], padding[0][1])[:-1] * spring_valid_x_n
@@ -140,30 +143,34 @@ while True:
     slice_a += spring_a[2] * spring_valid_z_p - \
                np.pad(spring_a[2], padding[2][1])[:, :, :-1] * spring_valid_z_n
 
-    if cnt < 5000:
-        slice_a -= 0.1 * slice_v
-    elif cnt == 5000:
+    if t < 100000:
+        slice_a -= 0.0005 * slice_v
+    elif t == 100000:
         slice_pos += vec(planet_R, 0, 0)
         slice_v += vec(0, 0, planet_v)
     else:
         slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
 
-    if cnt % 1000 == 0:
-        plt.scatter((slice_pos[:, N, :, 0] - cm[0]) * slice_valid[:, N, :, 0],
-                    (slice_pos[:, N, :, 2] - cm[2]) * slice_valid[:, N, :, 0])
-        plt.xlim(-planet_r * 1.2, planet_r * 1.2)
-        plt.ylim(-planet_r * 1.2, planet_r * 1.2)
+    if cnt % 50 == 0:
+        # plt.scatter((slice_pos[:, N, :, 0] - cm[0]) * slice_valid[:, N, :, 0],
+        #             (slice_pos[:, N, :, 2] - cm[2]) * slice_valid[:, N, :, 0])
+        # plt.xlim(-6.371e6 * 1.2, 6.371e6 * 1.2)
+        # plt.ylim(-6.371e6 * 1.2, 6.371e6 * 1.2)
+        plt.scatter(((slice_pos[:, N, :, 0] - cm[0]) * 10 + cm[0]) * slice_valid[:, N, :, 0],
+                    ((slice_pos[:, N, :, 2] - cm[2]) * 10 + cm[2]) * slice_valid[:, N, :, 0])
+        plt.xlim(-planet_R * 1.1, planet_R * 1.1)
+        plt.ylim(-planet_R * 1.1, planet_R * 1.1)
         plt.draw()
-        plt.pause(0.01)
+        plt.pause(0.001)
         plt.clf()
+
+    if cnt % 50 == 0:
+        print(slice_pos[N, N, 2 * N] - cm, t)
 
     slice_v += slice_a * dt
     slice_pos += slice_v * dt
 
     t += dt
     cnt += 1
-
-    if cnt % 1000 == 0:
-        print(slice_pos[N, N, 2 * N], t)
 
     # print(time.time() - s)
