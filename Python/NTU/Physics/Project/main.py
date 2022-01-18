@@ -74,7 +74,7 @@ sun_r = 6.95E8
 planet_r = 6.371e6 * 3.6138
 planet_m = 5.972e24
 # planet_R = 1.496e11
-planet_R = sun_r * 3  # test extremely close distance
+planet_R = sun_r * 8  # test extremely close distance
 planet_v = np.sqrt(G * sun_m / planet_R)
 
 # 1s for balls inside planet, 0s for others
@@ -134,7 +134,7 @@ while True:
     spring_a_Y, spring_a_G = spring_acc(slice_pos, spring_axis, slice_m)
 
     
-    spring_a = sprnig_a_Y + spring_a_G
+    spring_a = spring_a_Y + spring_a_G
     # spring forces are from both direction
     slice_a += spring_a[0] * spring_valid_x_p - \
                np.pad(spring_a[0], padding[0][1])[:-1] * spring_valid_x_n
@@ -156,8 +156,8 @@ while True:
         #             (slice_pos[:, N, :, 2] - cm[2]) * slice_valid[:, N, :, 0])
         # plt.xlim(-6.371e6 * 1.2, 6.371e6 * 1.2)
         # plt.ylim(-6.371e6 * 1.2, 6.371e6 * 1.2)
-        plt.scatter(((slice_pos[:, N, :, 0] - cm[0]) * 10 + cm[0]) * slice_valid[:, N, :, 0],
-                    ((slice_pos[:, N, :, 2] - cm[2]) * 10 + cm[2]) * slice_valid[:, N, :, 0])
+        plt.scatter(((slice_pos[:, N, :, 0] - cm[0]) * 30 + cm[0]) * slice_valid[:, N, :, 0],
+                    ((slice_pos[:, N, :, 2] - cm[2]) * 30 + cm[2]) * slice_valid[:, N, :, 0])
         plt.xlim(-planet_R * 1.1, planet_R * 1.1)
         plt.ylim(-planet_R * 1.1, planet_R * 1.1)
         plt.draw()

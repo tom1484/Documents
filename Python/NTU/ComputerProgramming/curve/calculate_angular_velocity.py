@@ -10,7 +10,7 @@ for line in lines:
 	points.append(vec(float(loc[0]), float(loc[1]), float(loc[2])))
 
 
-f = vec(-68.959, -57.022, 31.12)
+f = vec(-0.68959, -0.57022, 0.3112)
 # print(points)
 
 
