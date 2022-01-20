@@ -18,8 +18,7 @@ sun_r = 6.95E8
 
 planet_r = 6.371e6
 planet_m = 5.972e24
-# planet_R = 1.496e11
-planet_R = sun_r * 0.8  # test extremely close distance
+planet_R = sun_r * 0.8
 planet_v = sqrt(G * sun_m / planet_R)
 planet_T = 2 * pi * sqrt((planet_R ** 3) / (G * sun_m))
 
@@ -46,16 +45,10 @@ for ix, iy, iz in np.ndindex(N, N, N):
     slice_valid[ix, iy, iz] = 1
     slice = sphere(pos=pos, radius=slice_r, color=color.green)
     slice.id = (ix, iy, iz)
-    # slice.visible = False
     valid_slices.append((ix, iy, iz))
     slices.append(slice)
 
 slice_valid_op = slice_valid.reshape((N, N, N, 1))
-
-for s in slices:
-    x, y, z = s.id
-    if -1 <= x - n <= 1 and -1 <= y - n <= 1 and -1 <= z - n <= 1:
-        s.visible = True
 
 
 slice_N = len(slices)
@@ -70,7 +63,7 @@ def collision(b1p, b1v, b2p, b2v):
 
 
 @nb.jit(nopython=True)
-def planet_gravity(pos, valid):
+def inner_gravity(pos, valid):
     acc = np.zeros((N, N, N, 3))
     for ix0, iy0, iz0 in np.ndindex(N, N, N):
         if valid[ix0, iy0, iz0] == 0:
@@ -178,10 +171,6 @@ def planet_collision(pos, v, valid):
                 continue
 
             v_prime1, v_prime2 = collision(obj_pos, obj_v, src_pos, src_v)
-            # v_cm = (obj_v + src_v) / 2
-            # debounce = 1
-            # v_prime1, v_prime2 = (v_prime1 - v_cm) * debounce + v_cm, (v_prime2 - v_cm) * debounce + v_cm
-
             v_prime[ix0, iy0, iz0], v_prime[ix1, iy1, iz1] = v_prime1, v_prime2
 
     return v_prime
@@ -201,18 +190,10 @@ while True:
     rate(5000)
     s = time.time()
 
-    acc = planet_gravity(slice_pos, slice_valid)
-    acc += viscosity(slice_pos, slice_v, slice_valid)
-
-    # if t == 200:
-    #     slice_pos += np.array([planet_R, 0, 0])
-    #     slice_v += np.array([0, planet_v, 0])
-    #     sun.visible = True
-    #     display_scale = 5
-    # if t > 200:
-    #     acc += gravity(slice_pos, slice_valid)
+    acc = inner_gravity(slice_pos, slice_valid)
     acc += gravity(slice_pos, slice_valid)
 
+    acc += viscosity(slice_pos, slice_v, slice_valid)
     slice_v = planet_collision(slice_pos, slice_v, slice_valid)
 
     slice_a = acc
@@ -225,7 +206,6 @@ while True:
 
     for b in slices:
         ix, iy, iz = b.id
-        # pos = (slice_pos[ix, iy, iz] - cm) * display_scale + cm
         pos = slice_pos[ix, iy, iz]
         b.pos = vec(pos[0], pos[1], pos[2])
         b.radius = slice_r * display_scale
