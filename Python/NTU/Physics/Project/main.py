@@ -19,8 +19,9 @@ sun_r = 6.95E8
 planet_r = 6.371e6
 planet_m = 5.972e24
 # planet_R = 1.496e11
-planet_R = sun_r * 0.9  # test extremely close distance
-planet_v = np.sqrt(G * sun_m / planet_R)
+planet_R = sun_r * 0.8  # test extremely close distance
+planet_v = sqrt(G * sun_m / planet_R)
+planet_T = 2 * pi * sqrt((planet_R ** 3) / (G * sun_m))
 
 slice_r = planet_r / n / 2
 
@@ -132,7 +133,7 @@ def viscosity(pos, v, valid):
 
 @nb.jit(nopython=True)
 def dispersity(pos, valid):
-    dispersity_sum = 0
+    dispersities = []
     for ix0, iy0, iz0 in np.ndindex(N, N, N):
         if valid[ix0, iy0, iz0] == 0:
             continue
@@ -147,9 +148,11 @@ def dispersity(pos, valid):
             d = (np.sum((obj - src) * (obj - src)) ** 0.5) / (2 * slice_r)
             D = d if D < 0 else min(D, d)
 
-        dispersity_sum += D
+        dispersities.append(D)
 
-    return dispersity_sum / slice_N
+    dispersities.sort()
+
+    return sum(dispersities[:int(slice_N * 0.95)]) / (slice_N * 0.95)
 
 
 @nb.jit(nopython=True)
