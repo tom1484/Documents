@@ -1,176 +1,217 @@
-import vpython as vp
+from vpython import *
 import numpy as np
+import numba as nb
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import time
 
 
-# create numpy array as 3D vector
-def vec(v0, v1, v2) -> np.ndarray:
-    return np.array([v0, v1, v2])
-
-
-# magnitude of vector
-def mag(V) -> np.ndarray:
-    return np.sqrt(np.sum(V * V, axis=-1, keepdims=True))
-
-
-# magnitude in square
-def mag2(V) -> np.ndarray:
-    return np.sum(V * V, axis=-1, keepdims=True)
-
-
-# normalize vector to unit length
-def norm(V) -> np.ndarray:
-    return V / mag(V)
-
-
-# dot of two vector
-def dot(V1, V2) -> np.ndarray:
-    return np.sum(V1 * V2, axis=-1, keepdims=True)
-
-
-# project V1 on V2
-def project(V1, V2) -> np.ndarray:
-    return dot(V1, V2) / mag2(V2) * V2
-
-
-# gravititional acceleration of two object
-def G_acc(src_pos, obj_pos, src_m) -> np.ndarray:
-    return -(G * src_m / (mag(obj_pos - src_pos) ** 3)) * (obj_pos - src_pos)
-
-
-# gravititional acceleration inside a planet
-def G_acc_inner(src_pos, obj_pos, src_m, src_r) -> np.ndarray:
-    return -(G * src_m / (src_r ** 3)) * (obj_pos - src_pos)
-
-
-# acceleration from spring
-def spring_acc(obj_pos, origin_axis, obj_m) -> np.ndarray:
-    spring_axis_new = np.stack((np.roll(obj_pos, -1, axis=0),
-                                np.roll(obj_pos, -1, axis=1),
-                                np.roll(obj_pos, -1, axis=2))) - obj_pos
-    spring_axis_px = project(spring_axis_new, origin_axis)
-    spring_axis_py = spring_axis_new - spring_axis_px
-
-    force_Y = Y_modulus * spring_L * (mag(spring_axis_px) - spring_L) * norm(origin_axis)
-    force_G = G_modulus * spring_L * spring_axis_py
-
-    return force_Y / obj_m, force_G / obj_m
-
-
 G = 6.6743e-11
-Y_modulus = 2e8
-# Y_modulus = 2e12
-G_modulus = 1e8
-# G_modulus = 1e12
 
-N = 5
-r_N = 2 * N + 1  # slice radius to N segments, therefore 2N+1 points are required
+n = 3
+N = 2 * n + 1
+mu = 5000
+# mu = 0
 
 sun_m = 1.989e30
 sun_r = 6.95E8
 
-planet_r = 6.371e6 * 3.6138
+planet_r = 6.371e6
 planet_m = 5.972e24
-# planet_R = 1.496e11
-planet_R = sun_r * 8  # test extremely close distance
-planet_v = np.sqrt(G * sun_m / planet_R)
+planet_R = sun_r * 0.8
+planet_v = sqrt(G * sun_m / planet_R)
+planet_T = 2 * pi * sqrt((planet_R ** 3) / (G * sun_m))
 
-# 1s for balls inside planet, 0s for others
-slice_valid = np.ndarray((r_N, r_N, r_N, 1))
+slice_r = planet_r / n / 2
 
-slice_N = 0
-for ix, iy, iz in np.ndindex(r_N, r_N, r_N):
-    x, y, z = ix - N, iy - N, iz - N
-    if x * x + y * y + z * z <= N * N:
-        slice_valid[ix, iy, iz, 0] = 1.0
-        slice_N += 1
-    else:
-        slice_valid[ix, iy, iz, 0] = 0.0
 
-slice_d = planet_r / N
+scene = canvas(width=800, height=800, background=vec(1, 1, 1))
+
+
+slice_pos = np.zeros((N, N, N, 3))
+slice_v = np.zeros((N, N, N, 3))
+slice_a = np.zeros((N, N, N, 3))
+slice_valid = np.zeros((N, N, N))
+
+
+slices = []
+valid_slices = []
+for ix, iy, iz in np.ndindex(N, N, N):
+    x, y, z = ix - n, iy - n, iz - n
+    if x * x + y * y + z * z > n * n:
+        continue
+    pos = vec(x, y, z) * planet_r / n
+    slice_pos[ix, iy, iz] = np.array([pos.x, pos.y, pos.z])
+    slice_valid[ix, iy, iz] = 1
+    slice = sphere(pos=pos, radius=slice_r, color=color.green)
+    slice.id = (ix, iy, iz)
+    valid_slices.append((ix, iy, iz))
+    slices.append(slice)
+
+slice_valid_op = slice_valid.reshape((N, N, N, 1))
+
+
+slice_N = len(slices)
 slice_m = planet_m / slice_N
 
-slice_pos = np.ndarray((r_N, r_N, r_N, 3))
-slice_v = np.ndarray((r_N, r_N, r_N, 3))
-slice_a = np.ndarray((r_N, r_N, r_N, 3))
 
-for ix, iy, iz in np.ndindex(r_N, r_N, r_N):
-    x, y, z = ix - N, iy - N, iz - N
+@nb.jit(nopython=True)
+def collision(b1p, b1v, b2p, b2v):
+    v1 = b1v - (b1p - b2p) * np.sum((b1v - b2v) * (b1p - b2p)) / np.sum((b1p - b2p) ** 2)
+    v2 = b2v - (b2p - b1p) * np.sum((b2v - b1v) * (b2p - b1p)) / np.sum((b2p - b1p) ** 2)
+    return v1, v2
 
-    slice_pos[ix, iy, iz] = vec(x, y, z) * planet_r / N
-    slice_v[ix, iy, iz] = vec(0, 0, 0)
-    slice_a[ix, iy, iz] = vec(0, 0, 0)
 
-spring_L = slice_d
-# create springs on positive direction
-spring_axis = np.stack((np.roll(slice_pos, -1, axis=0),
-                        np.roll(slice_pos, -1, axis=1),
-                        np.roll(slice_pos, -1, axis=2))) - slice_pos
+@nb.jit(nopython=True)
+def inner_gravity(pos, valid):
+    acc = np.zeros((N, N, N, 3))
+    for ix0, iy0, iz0 in np.ndindex(N, N, N):
+        if valid[ix0, iy0, iz0] == 0:
+            continue
+        obj = pos[ix0, iy0, iz0]
+        for ix1, iy1, iz1 in np.ndindex(N, N, N):
+            if valid[ix1, iy1, iz1] == 0:
+                continue
+            if ix0 == ix1 and iy0 == iy1 and iz0 == iz1:
+                continue
+            src = pos[ix1, iy1, iz1]
+            r = obj - src
+            acc[ix0, iy0, iz0] += -G * slice_m / (np.sum(r * r) ** 1.5) * r
 
-padding = [[((0, 1), (0, 0), (0, 0), (0, 0)), ((1, 0), (0, 0), (0, 0), (0, 0))],
-           [((0, 0), (0, 1), (0, 0), (0, 0)), ((0, 0), (1, 0), (0, 0), (0, 0))],
-           [((0, 0), (0, 0), (0, 1), (0, 0)), ((0, 0), (0, 0), (1, 0), (0, 0))]]
-# 1 if the ball has a spring in positive direction
-spring_valid_x_p = np.pad(slice_valid, padding[0][0])[1:]
-spring_valid_y_p = np.pad(slice_valid, padding[1][0])[:, 1:]
-spring_valid_z_p = np.pad(slice_valid, padding[2][0])[:, :, 1:]
-# 1 if the ball has a spring in negative direction
-spring_valid_x_n = np.pad(slice_valid, padding[0][1])[:-1]
-spring_valid_y_n = np.pad(slice_valid, padding[1][1])[:, :-1]
-spring_valid_z_n = np.pad(slice_valid, padding[2][1])[:, :, :-1]
+    return acc
+
+
+@nb.jit(nopython=True)
+def gravity(pos, valid):
+    acc = np.zeros((N, N, N, 3))
+    for ix0, iy0, iz0 in np.ndindex(N, N, N):
+        if valid[ix0, iy0, iz0] == 0:
+            continue
+        obj = pos[ix0, iy0, iz0]
+        acc[ix0, iy0, iz0] += -G * sun_m / (np.sum(obj * obj) ** 1.5) * obj
+
+    return acc
+
+
+@nb.jit(nopython=True)
+def viscosity(pos, v, valid):
+    acc = np.zeros((N, N, N, 3))
+    for ix0, iy0, iz0 in np.ndindex(N, N, N):
+        if valid[ix0, iy0, iz0] == 0:
+            continue
+        id0 = ix0 * N * N + iy0 * N + iz0
+        obj_pos = pos[ix0, iy0, iz0]
+        obj_v = v[ix0, iy0, iz0]
+        for ix1, iy1, iz1 in np.ndindex(N, N, N):
+            if ix1 * N * N + iy1 * N + iz1 >= id0:
+                break
+            if valid[ix1, iy1, iz1] == 0:
+                continue
+            src_pos = pos[ix1, iy1, iz1]
+            src_v = v[ix1, iy1, iz1]
+
+            r = obj_pos - src_pos
+            if (np.sum(r * r) ** 0.5) > (4 * slice_r):
+                continue
+
+            dv = obj_v - src_v
+            dv_proj = np.sum(dv * r) / np.sum(r * r) * r
+            dv_orth = dv - dv_proj
+
+            acc[ix0, iy0, iz0] += -mu * (dv_orth / (np.sum(r * r) ** 0.5))
+            acc[ix1, iy1, iz1] -= -mu * (dv_orth / (np.sum(r * r) ** 0.5))
+
+    return acc
+
+
+@nb.jit(nopython=True)
+def dispersity(pos, valid):
+    dispersities = []
+    for ix0, iy0, iz0 in np.ndindex(N, N, N):
+        if valid[ix0, iy0, iz0] == 0:
+            continue
+        obj = pos[ix0, iy0, iz0]
+        D = -1
+        for ix1, iy1, iz1 in np.ndindex(N, N, N):
+            if valid[ix1, iy1, iz1] == 0:
+                continue
+            if ix0 == ix1 and iy0 == iy1 and iz0 == iz1:
+                continue
+            src = pos[ix1, iy1, iz1]
+            d = (np.sum((obj - src) * (obj - src)) ** 0.5) / (2 * slice_r)
+            D = d if D < 0 else min(D, d)
+
+        dispersities.append(D)
+
+    dispersities.sort()
+
+    return sum(dispersities[:int(slice_N * 0.95)]) / (slice_N * 0.95)
+
+
+@nb.jit(nopython=True)
+def planet_collision(pos, v, valid):
+    v_prime = v
+    for ix0, iy0, iz0 in np.ndindex(N, N, N):
+        if valid[ix0, iy0, iz0] == 0:
+            continue
+        id0 = ix0 * N * N + iy0 * N + iz0
+        obj_pos = pos[ix0, iy0, iz0]
+        obj_v = v_prime[ix0, iy0, iz0]
+        for ix1, iy1, iz1 in np.ndindex(N, N, N):
+            if ix1 * N * N + iy1 * N + iz1 >= id0:
+                break
+            if valid[ix1, iy1, iz1] == 0:
+                continue
+            src_pos = pos[ix1, iy1, iz1]
+            src_v = v_prime[ix1, iy1, iz1]
+
+            r = obj_pos - src_pos
+            delta_v = obj_v - src_v
+            if (np.sum(r * r) ** 0.5) > (2 * slice_r) or np.sum(r * delta_v) >= 0:
+                continue
+
+            v_prime1, v_prime2 = collision(obj_pos, obj_v, src_pos, src_v)
+            v_prime[ix0, iy0, iz0], v_prime[ix1, iy1, iz1] = v_prime1, v_prime2
+
+    return v_prime
+
+
+sun = sphere(pos=vec(0, 0, 0), radius=sun_r * 0.1, color=color.orange)
+# sun.visible = False
+display_scale = 1
+slice_pos += np.array([planet_R, 0, 0])
+slice_v += np.array([0, planet_v, 0])
+
 
 t = 0
-dt = 10
+dt = 5
 cnt = 0
 while True:
-    vp.rate(5000)
+    rate(5000)
     s = time.time()
 
-    cm = np.sum(slice_pos * slice_valid, axis=(0, 1, 2)) / slice_N  # center of mass of planet
-    slice_a = G_acc_inner(cm, slice_pos, planet_m, planet_r) * slice_valid
+    acc = inner_gravity(slice_pos, slice_valid)
+    acc += gravity(slice_pos, slice_valid)
 
-    spring_a_Y, spring_a_G = spring_acc(slice_pos, spring_axis, slice_m)
+    acc += viscosity(slice_pos, slice_v, slice_valid)
+    slice_v = planet_collision(slice_pos, slice_v, slice_valid)
 
-    
-    spring_a = spring_a_Y + spring_a_G
-    # spring forces are from both direction
-    slice_a += spring_a[0] * spring_valid_x_p - \
-               np.pad(spring_a[0], padding[0][1])[:-1] * spring_valid_x_n
-    slice_a += spring_a[1] * spring_valid_y_p - \
-               np.pad(spring_a[1], padding[1][1])[:, :-1] * spring_valid_y_n
-    slice_a += spring_a[2] * spring_valid_z_p - \
-               np.pad(spring_a[2], padding[2][1])[:, :, :-1] * spring_valid_z_n
-
-    if t < 100000:
-        slice_a -= 0.0005 * slice_v
-    elif t == 100000:
-        slice_pos += vec(planet_R, 0, 0)
-        slice_v += vec(0, 0, planet_v)
-    else:
-        slice_a += G_acc(vec(0, 0, 0), slice_pos, sun_m)
-
-    if cnt % 50 == 0:
-        # plt.scatter((slice_pos[:, N, :, 0] - cm[0]) * slice_valid[:, N, :, 0],
-        #             (slice_pos[:, N, :, 2] - cm[2]) * slice_valid[:, N, :, 0])
-        # plt.xlim(-6.371e6 * 1.2, 6.371e6 * 1.2)
-        # plt.ylim(-6.371e6 * 1.2, 6.371e6 * 1.2)
-        plt.scatter(((slice_pos[:, N, :, 0] - cm[0]) * 30 + cm[0]) * slice_valid[:, N, :, 0],
-                    ((slice_pos[:, N, :, 2] - cm[2]) * 30 + cm[2]) * slice_valid[:, N, :, 0])
-        plt.xlim(-planet_R * 1.1, planet_R * 1.1)
-        plt.ylim(-planet_R * 1.1, planet_R * 1.1)
-        plt.draw()
-        plt.pause(0.001)
-        plt.clf()
-
-    if cnt % 50 == 0:
-        print(slice_pos[N, N, 2 * N] - cm, t)
-
+    slice_a = acc
     slice_v += slice_a * dt
     slice_pos += slice_v * dt
+
+    cm = np.sum(slice_pos * slice_valid_op, axis=(0, 1, 2)) / len(slices)  # center of mass of planet
+    scene.center = vec(cm[0], cm[1], cm[2])
+    scene.forward = vec(0, 0, -1)
+
+    for b in slices:
+        ix, iy, iz = b.id
+        pos = slice_pos[ix, iy, iz]
+        b.pos = vec(pos[0], pos[1], pos[2])
+        b.radius = slice_r * display_scale
 
     t += dt
     cnt += 1
 
     # print(time.time() - s)
+    print(dispersity(slice_pos, slice_valid), t)
