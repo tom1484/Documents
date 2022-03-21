@@ -1,4 +1,4 @@
-const N = 100;
+const N = 200;
 
 let cnt = 0;
 let angle = 0;
@@ -15,6 +15,7 @@ function setup() {
     createCanvas(1200, 800);
     fourier.build(N, function kernel(x) {
         return (round(x * 4) % 2 - 0.5) * 2;
+        // return 1 / cos(3 * x);
         // return sin(2 * PI * x * 5);
     });
 }

@@ -9,9 +9,10 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="2">
+          <list size="3">
             <item index="0" class="java.lang.String" itemvalue="json" />
             <item index="1" class="java.lang.String" itemvalue="opencv-contrib-python" />
+            <item index="2" class="java.lang.String" itemvalue="PyQt5" />
           </list>
         </value>
       </option>
@@ -35,6 +36,7 @@
       </option>
     </inspection_tool>
     <inspection_tool class="PyRedeclarationInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyRedundantParenthesesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PySingleQuotedDocstringInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyUnreachableCodeInspection" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -44,6 +46,13 @@
           <option value="vpython.vpython.sphere.a" />
           <option value="vpython.vpython.sphere.v" />
           <option value="vpython.vpython.sphere.m" />
+          <option value="main.vpython" />
+          <option value="vpython.vpython.cylinder.b0" />
+          <option value="vpython.vpython.cylinder.L" />
+          <option value="vpython.vpython.cylinder.b1" />
+          <option value="vpython.vpython.cylinder.axis_origin" />
+          <option value="main.vec" />
+          <option value="main.spring_acc_x" />
         </list>
       </option>
     </inspection_tool>
