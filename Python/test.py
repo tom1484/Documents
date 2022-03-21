@@ -1,31 +1,40 @@
-a = 0
+# from threading import Timer
+from time import time_ns
 
-def f():
-	global a
-	a += 1
-	return True
 
-def check(i):
-	return i % 3 == 0
+print(time_ns())
 
-# a = 1
+st = time_ns()
+cnt = 0
+while True:
+    et = time_ns()
+    if et - st >= (cnt + 1) * 1000:
+        cnt += 1
+    
+    if cnt % 100000 == 0:
+        print((et - st) // 1000, cnt)
 
-# def f():
-# 	global a
-# 	a *= 2
-# 	return True
+    # a = 0
+    # for i in range(10):
+    #     a += 1
 
-# def check(i):
-# 	return True
 
-N = 10000
-M = 950
+# c = 0
 
-def r(i, I):
-	return (i <= I and i <= N) and ((check(i) and f() or True) and r(i + 1, I))
+# def hello():
+#     global c
+#     c += 1
 
-def R(i, I):
-	return i <= I and ((r(i * M, (i + 1) * M - 1) or True) and R(i + 1, I))
+# def display():
+#     global c
+#     print(c)
 
-R(0, N // M)
-print(a)
+# class RepeatingTimer(Timer): 
+#     def run(self):
+#         while not self.finished.is_set():
+#             self.function(*self.args, **self.kwargs)
+#             self.finished.wait(self.interval)
+
+# RepeatingTimer(0.00001, hello).start()
+# RepeatingTimer(1, display).start()
+
