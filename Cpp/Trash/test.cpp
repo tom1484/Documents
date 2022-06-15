@@ -1,47 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+
+const int N = 50;
+const int T = 5000000;
+
+
 int main() {
-  int x=0;
-  double y=6.957546152;
-  double z=2.657546152;
-  int cnt=1;
-  double u,t,s=0;
-  for(int i=0;i<2;i++)
-    {
-        for(int j=0;j<2;j++)
-        {
-            for(int k=0;k<2;k++)
-            {
-               if(i==0) u=-4.3;
-               else u=4.3;
-               if(j==0) t=-4.3;
-               else t=4.3;
-               if(k==0) s=-4.3;
-               else s=4.3;
-               cout<<"tuple<double, double, double>e_m"<<cnt<<"("<<u<<","<<t<<","<<s<<");\n";
-               cnt++;
-            }
+
+    srand(time(0));
+
+    double th = 1;
+    double cnt = 0;
+
+    for (int i = 0; i < N; i ++)
+        th /= 2.71828182845905;
+
+    for (int i = 0; i < T; i ++) {
+        double r = 1;
+        for (int j = 0; j < N; j ++) {
+            r *= (double) rand() / RAND_MAX;
         }
+        if (r <= th)
+            cnt += 1.0 / T;
     }
-for(int i=0;i<2;i++)
-    {
-        for(int j=0;j<2;j++)
-        {
-            for(int k=0;k<2;k++)
-            {
-               if(i==0) u=-x;
-               else u=x;
-               if(j==0) t=-y;
-               else t=y;
-               if(k==0) s=-z;
-               else s=z;
-               cout<<"tuple<double, double, double>e_m"<<cnt<<"("<<u<<","<<t<<","<<s<<");\n";
-               cnt++;
-               cout<<"tuple<double, double, double>e_m"<<cnt<<"("<<s<<","<<u<<","<<t<<");\n";
-               cnt++;
-               cout<<"tuple<double, double, double>e_m"<<cnt<<"("<<t<<","<<s<<","<<u<<");\n";
-               cnt++;
-            }
-        }
-    }
+
+    cout << cnt;
+
+
+    return 0;
 }
