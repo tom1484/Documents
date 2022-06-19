@@ -1,4 +1,5 @@
 fn sort_array(v: &mut Vec<i32>, lt: usize, rt: usize) {
+
     if rt - lt <= 1 {
         return;
     }
