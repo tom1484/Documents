@@ -1,7 +1,8 @@
-#define N 8000
+#define N 4000
+#define S 2
 
 esp_timer_handle_t timer;
-int16_t raw[N] = {0};
+int16_t raw[S * N] = {0};
 int cnt = 0;
 
 void setup() {
@@ -21,16 +22,16 @@ void loop() {
 }
 
 void output() {
-  for (int i = 0; i < N; i++)
+  for (int i = 0; i < S * N; i++)
     Serial.println(raw[i]);
 }
 
 static void func(void *arg) {
-  if (cnt < N) {
+  if (cnt < S * N) {
     int16_t R = analogRead(34) + 1;
     raw[cnt++] = R;
 
-    if (cnt == N)
+    if (cnt == S * N)
       output();
   }
 //  byte B[3] = {
