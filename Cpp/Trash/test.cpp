@@ -1,32 +1,79 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <windows.h>
+#include <tchar.h>
+#include <stdio.h>
+#include <chrono>
+#include <ctime>
+#include <fstream>
+// #include <strsafe.h>
 using namespace std;
 
-
-const int N = 50;
-const int T = 5000000;
-
+#define BUFFERSIZE (3 * 2000)
 
 int main() {
 
-    srand(time(0));
+    // Open serial port
+    HANDLE serialHandle;
 
-    double th = 1;
-    double cnt = 0;
+    serialHandle = CreateFile("\\\\.\\COM9", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 
-    for (int i = 0; i < N; i ++)
-        th /= 2.71828182845905;
+    // Do some basic settings
+    DCB serialParams = { 0 };
+    serialParams.DCBlength = sizeof(serialParams);
 
-    for (int i = 0; i < T; i ++) {
-        double r = 1;
-        for (int j = 0; j < N; j ++) {
-            r *= (double) rand() / RAND_MAX;
-        }
-        if (r <= th)
-            cnt += 1.0 / T;
+    GetCommState(serialHandle, &serialParams);
+    serialParams.BaudRate = 115200;
+    serialParams.ByteSize = 8;
+    serialParams.StopBits = TWOSTOPBITS;
+    serialParams.Parity = NOPARITY;
+    SetCommState(serialHandle, &serialParams);
+
+    // Set timeouts
+    COMMTIMEOUTS timeout = { 0 };
+    timeout.ReadIntervalTimeout = 50;
+    timeout.ReadTotalTimeoutConstant = 50;
+    timeout.ReadTotalTimeoutMultiplier = 50;
+    timeout.WriteTotalTimeoutConstant = 50;
+    timeout.WriteTotalTimeoutMultiplier = 10;
+
+    SetCommTimeouts(serialHandle, &timeout);
+
+    DWORD ol = {0};
+    byte ReadBuffer[BUFFERSIZE] = {0};
+    char ProcBuffer[BUFFERSIZE] = {0};
+
+    auto start = clock();
+    ReadFile(serialHandle, ReadBuffer, BUFFERSIZE, &ol, 0);
+    auto end = clock();
+
+    // for (int i = 0; i < BUFFERSIZE; i++) {
+    //     printf("%d\n", ReadBuffer[i]);
+    //     // cout << ReadBuffer[i] << endl;
+    // }
+    
+
+    int head = -1;
+    while (ReadBuffer[++head] != 0) {}
+
+    int N = (BUFFERSIZE - head) / 3;
+    int *arr = (int*) malloc(sizeof(int) * N);
+
+    // char num_s[5] = {0};
+    for (int i = 0; i < N; i ++) {
+        // printf("%d, %d\n", ReadBuffer[head + i * 3 + 1], ReadBuffer[head + i * 3 + 2]);
+        arr[i] = (ReadBuffer[head + i * 3 + 1] << 8) + ReadBuffer[head + i * 3 + 2];
+        printf("%d\n", arr[i]);
     }
+    
+    printf("%f\n", float(end - start) / CLOCKS_PER_SEC);
 
-    cout << cnt;
+    fstream f;
+    f.open("raw.txt", ios::out);
+    for (int i = 0; i < N; i ++)
+        f << arr[i] - 1900 << '\n';
+    f.close();
 
+    CloseHandle(serialHandle);
 
     return 0;
 }
