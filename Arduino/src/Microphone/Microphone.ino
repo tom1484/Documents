@@ -1,4 +1,4 @@
-#define N 4000
+#define N 10000
 #define S 2
 
 esp_timer_handle_t timer;
@@ -22,8 +22,13 @@ void loop() {
 }
 
 void output() {
-  for (int i = 0; i < S * N; i++)
-    Serial.println(raw[i]);
+  for (int i = 0; i < S; i++) {
+    for (int j = 0; j < N; j++) {
+      Serial.println(raw[i * N + j]);
+      delay(1);
+    }
+    delay(1000);
+  }
 }
 
 static void func(void *arg) {

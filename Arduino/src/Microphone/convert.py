@@ -8,4 +8,4 @@ data -= np.mean(data)
 data /= np.max(np.abs(data))
 data *= np.iinfo(np.int16).max
 
-write("out.wav", 4000, data.astype(np.int16))
+write("out.wav", 10000, data.astype(np.int16))
