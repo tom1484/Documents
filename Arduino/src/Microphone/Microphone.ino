@@ -1,5 +1,5 @@
-#define N 10000
-#define S 2
+#define N 8000
+#define S 10
 
 esp_timer_handle_t timer;
 int16_t raw[S * N] = {0};
