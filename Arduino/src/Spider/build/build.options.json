@@ -1,0 +1,12 @@
+{
+  "additionalFiles": "..,..,..,..",
+  "builtInLibrariesFolders": "",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "",
+  "fqbn": "arduino:avr:uno",
+  "hardwareFolders": "/home/tom1484/.arduino15/packages",
+  "otherLibrariesFolders": "/home/tom1484/Arduino/libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "/home/tom1484/Documents/Arduino/src/Spider/Spider.ino"
+}

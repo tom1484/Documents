@@ -1,0 +1,851 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.324  000.318: locale set
+000.585  000.261: inits 1
+000.594  000.009: window checked
+000.597  000.003: parsing arguments
+002.591  001.995: init lua interpreter
+002.857  000.266: expanding arguments
+002.881  000.024: inits 2
+003.368  000.487: init highlight
+003.371  000.002: waiting for UI
+005.422  002.052: done waiting for UI
+005.493  000.070: init screen for UI
+005.528  000.036: init default mappings
+005.582  000.053: init default autocommands
+006.122  000.102  000.102: sourcing /usr/share/nvim/runtime/ftplugin.vim
+006.212  000.052  000.052: sourcing /usr/share/nvim/runtime/indent.vim
+007.968  001.646  001.646: sourcing /home/tom1484/.local/share/nvim/site/autoload/plug.vim
+012.468  000.111  000.111: sourcing /usr/share/nvim/runtime/filetype.lua
+019.533  000.030  000.030: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftdetect/arduino.vim
+019.623  000.056  000.056: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/ftdetect/julia.vim
+019.774  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/css.vim
+019.796  000.013  000.013: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/graphql.vim
+019.814  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/html.vim
+019.864  000.018  000.018: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/javascript.vim
+019.883  000.010  000.010: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/json.vim
+019.901  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/less.vim
+019.918  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/lua.vim
+019.947  000.021  000.021: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/markdown.vim
+019.963  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/php.vim
+019.980  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/ruby.vim
+019.996  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/scss.vim
+020.016  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/svelte.vim
+020.036  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/typescript.vim
+020.053  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/vue.vim
+020.070  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/xml.vim
+020.090  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/yaml.vim
+020.306  007.817  007.553: sourcing /usr/share/nvim/runtime/filetype.vim
+020.386  000.010  000.010: sourcing /usr/share/nvim/runtime/ftplugin.vim
+020.454  000.007  000.007: sourcing /usr/share/nvim/runtime/indent.vim
+020.664  000.103  000.103: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+020.755  000.274  000.171: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+021.003  000.059  000.059: sourcing /home/tom1484/.config/nvim/config/plugin/coc.nvim.vim
+021.050  000.015  000.015: sourcing /home/tom1484/.config/nvim/config/plugin/expand-region.vim
+021.410  000.214  000.214: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+021.570  000.497  000.283: sourcing /home/tom1484/.config/nvim/config/plugin/expand_region.vim
+021.639  000.038  000.038: sourcing /home/tom1484/.config/nvim/config/plugin/far.vim.vim
+021.750  000.079  000.079: sourcing /home/tom1484/.config/nvim/config/plugin/fzf.vim
+021.807  000.031  000.031: sourcing /home/tom1484/.config/nvim/config/plugin/lightline.vim.vim
+021.905  000.053  000.053: sourcing /home/tom1484/.config/nvim/config/plugin/pear-tree.vim
+021.970  000.035  000.035: sourcing /home/tom1484/.config/nvim/config/plugin/tagbar.vim
+022.014  000.017  000.017: sourcing /home/tom1484/.config/nvim/config/plugin/vim-airline.vim
+022.050  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/vim-anyfold.vim
+022.113  000.013  000.013: sourcing /home/tom1484/.config/nvim/config/plugin/vim-commentary.vim
+022.145  000.011  000.011: sourcing /home/tom1484/.config/nvim/config/plugin/vim-eazy-align.vim
+022.209  000.035  000.035: sourcing /home/tom1484/.config/nvim/config/plugin/vim-tmux-navigator.vim
+022.221  015.933  005.171: sourcing /home/tom1484/.config/nvim/config/plugin.vim
+022.372  000.137  000.137: sourcing /home/tom1484/.config/nvim/config/keymap.vim
+027.186  000.409  000.409: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+027.481  000.142  000.142: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+027.589  000.862  000.312: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+027.843  000.125  000.125: sourcing /usr/share/nvim/runtime/filetype.lua
+027.871  000.013  000.013: sourcing /usr/share/nvim/runtime/filetype.vim
+028.018  000.016  000.016: sourcing /usr/share/nvim/runtime/ftplugin.vim
+028.098  000.009  000.009: sourcing /usr/share/nvim/runtime/indent.vim
+039.770  011.413  011.413: sourcing /home/tom1484/.config/nvim/plugged/vim-code-dark/colors/codedark.vim
+039.848  017.463  005.026: sourcing /home/tom1484/.config/nvim/config/general.vim
+039.854  033.589  000.056: sourcing /home/tom1484/.config/nvim/init.vim
+039.859  000.534: sourcing vimrc file(s)
+040.414  000.118  000.118: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+040.833  000.368  000.368: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+042.102  000.553  000.553: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+049.217  009.066  008.027: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+052.517  003.163  003.163: sourcing /home/tom1484/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+054.138  001.538  001.538: sourcing /home/tom1484/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+054.557  000.176  000.176: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+054.953  000.133  000.133: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+056.607  002.409  002.101: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+057.193  000.439  000.439: sourcing /home/tom1484/.config/nvim/plugged/pear-tree/plugin/pear-tree.vim
+057.775  000.498  000.498: sourcing /home/tom1484/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+058.065  000.207  000.207: sourcing /home/tom1484/.config/nvim/plugged/far.vim/plugin/far.vim
+059.168  001.053  001.053: sourcing /home/tom1484/.config/nvim/plugged/fzf/plugin/fzf.vim
+059.664  000.410  000.410: sourcing /home/tom1484/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+063.223  003.501  003.501: sourcing /home/tom1484/.config/nvim/plugged/distant.nvim/plugin/distant.vim
+063.395  000.120  000.120: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+063.819  000.381  000.381: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/plugin/prettier.vim
+063.886  000.022  000.022: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/plugin/anyfold.vim
+064.055  000.139  000.139: sourcing /home/tom1484/.config/nvim/plugged/vim-easy-align/plugin/easy_align.vim
+064.194  000.108  000.108: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+064.486  000.141  000.141: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+064.505  000.007  000.007: sourcing /usr/share/nvim/runtime/plugin/health.vim
+064.565  000.052  000.052: sourcing /usr/share/nvim/runtime/plugin/man.vim
+064.995  000.208  000.208: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+065.064  000.492  000.284: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+065.201  000.128  000.128: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+065.595  000.383  000.383: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+066.245  000.162  000.162: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+066.517  000.123  000.123: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+066.594  000.827  000.542: sourcing /home/tom1484/.local/share/nvim/rplugin.vim
+066.599  000.966  000.139: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+066.756  000.146  000.146: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+066.794  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+066.928  000.126  000.126: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+067.005  000.068  000.068: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+067.029  000.015  000.015: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+067.190  000.153  000.153: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+067.561  001.948: loading rtp plugins
+067.636  000.075: loading packages
+067.651  000.015: loading after plugins
+067.660  000.009: inits 3
+068.761  001.101: reading ShaDa
+068.980  000.219: opening buffers
+069.319  000.291  000.291: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/LaTeXtoUnicode.vim
+069.775  000.407  000.407: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/julia_latex_symbols.vim
+079.033  000.106  000.106: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+079.582  000.263  000.263: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+080.040  000.036  000.036: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+080.424  000.142  000.142: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+080.903  000.749  000.607: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/darcula.vim
+083.316  012.483: BufEnter autocommands
+083.322  000.006: editing files in windows
+083.459  000.137: VimEnter autocommands
+083.461  000.002: UIEnter autocommands
+083.462  000.001: before starting main loop
+083.958  000.496: first screen update
+083.960  000.003: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- NVIM STARTING ---
+000.382  000.376: locale set
+000.620  000.238: inits 1
+000.628  000.008: window checked
+000.662  000.034: parsing arguments
+002.329  001.667: init lua interpreter
+002.537  000.207: expanding arguments
+002.554  000.017: inits 2
+002.884  000.330: init highlight
+002.885  000.002: waiting for UI
+003.785  000.900: done waiting for UI
+003.813  000.027: init screen for UI
+003.836  000.023: init default mappings
+003.869  000.033: init default autocommands
+004.271  000.072  000.072: sourcing /usr/share/nvim/runtime/ftplugin.vim
+004.322  000.031  000.031: sourcing /usr/share/nvim/runtime/indent.vim
+005.470  001.089  001.089: sourcing /home/tom1484/.local/share/nvim/site/autoload/plug.vim
+008.450  000.076  000.076: sourcing /usr/share/nvim/runtime/filetype.lua
+013.288  000.022  000.022: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftdetect/arduino.vim
+013.348  000.039  000.039: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/ftdetect/julia.vim
+013.453  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/css.vim
+013.468  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/graphql.vim
+013.481  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/html.vim
+013.495  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/javascript.vim
+013.507  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/json.vim
+013.518  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/less.vim
+013.529  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/lua.vim
+013.548  000.013  000.013: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/markdown.vim
+013.558  000.005  000.005: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/php.vim
+013.570  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/ruby.vim
+013.585  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/scss.vim
+013.599  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/svelte.vim
+013.614  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/typescript.vim
+013.627  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/vue.vim
+013.639  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/xml.vim
+013.653  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/yaml.vim
+013.796  005.333  005.153: sourcing /usr/share/nvim/runtime/filetype.vim
+013.853  000.007  000.007: sourcing /usr/share/nvim/runtime/ftplugin.vim
+013.900  000.005  000.005: sourcing /usr/share/nvim/runtime/indent.vim
+014.039  000.063  000.063: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+014.104  000.185  000.122: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+014.336  000.058  000.058: sourcing /home/tom1484/.config/nvim/config/plugin/coc.nvim.vim
+014.384  000.013  000.013: sourcing /home/tom1484/.config/nvim/config/plugin/expand-region.vim
+014.662  000.174  000.174: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+014.791  000.387  000.213: sourcing /home/tom1484/.config/nvim/config/plugin/expand_region.vim
+014.847  000.030  000.030: sourcing /home/tom1484/.config/nvim/config/plugin/far.vim.vim
+014.940  000.067  000.067: sourcing /home/tom1484/.config/nvim/config/plugin/fzf.vim
+014.986  000.011  000.011: sourcing /home/tom1484/.config/nvim/config/plugin/lightline.vim.vim
+015.053  000.040  000.040: sourcing /home/tom1484/.config/nvim/config/plugin/pear-tree.vim
+015.099  000.027  000.027: sourcing /home/tom1484/.config/nvim/config/plugin/tagbar.vim
+015.137  000.014  000.014: sourcing /home/tom1484/.config/nvim/config/plugin/vim-airline.vim
+015.188  000.013  000.013: sourcing /home/tom1484/.config/nvim/config/plugin/vim-anyfold.vim
+015.502  000.027  000.027: sourcing /home/tom1484/.config/nvim/config/plugin/vim-commentary.vim
+015.553  000.013  000.013: sourcing /home/tom1484/.config/nvim/config/plugin/vim-eazy-align.vim
+015.629  000.040  000.040: sourcing /home/tom1484/.config/nvim/config/plugin/vim-tmux-navigator.vim
+015.642  011.279  003.845: sourcing /home/tom1484/.config/nvim/config/plugin.vim
+015.800  000.142  000.142: sourcing /home/tom1484/.config/nvim/config/keymap.vim
+019.851  000.285  000.285: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+020.078  000.113  000.113: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+020.172  000.655  000.257: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+020.427  000.109  000.109: sourcing /usr/share/nvim/runtime/filetype.lua
+020.454  000.012  000.012: sourcing /usr/share/nvim/runtime/filetype.vim
+020.571  000.011  000.011: sourcing /usr/share/nvim/runtime/ftplugin.vim
+020.659  000.008  000.008: sourcing /usr/share/nvim/runtime/indent.vim
+029.803  008.932  008.932: sourcing /home/tom1484/.config/nvim/plugged/vim-code-dark/colors/codedark.vim
+029.883  014.070  004.343: sourcing /home/tom1484/.config/nvim/config/general.vim
+029.891  025.540  000.049: sourcing /home/tom1484/.config/nvim/init.vim
+029.895  000.383: sourcing vimrc file(s)
+030.192  000.071  000.071: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+030.493  000.270  000.270: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+030.734  000.124  000.124: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+036.745  006.728  006.264: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+038.675  001.826  001.826: sourcing /home/tom1484/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+039.757  001.010  001.010: sourcing /home/tom1484/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+040.083  000.128  000.128: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+040.389  000.098  000.098: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+041.414  001.596  001.370: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+041.684  000.202  000.202: sourcing /home/tom1484/.config/nvim/plugged/pear-tree/plugin/pear-tree.vim
+041.863  000.145  000.145: sourcing /home/tom1484/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+042.030  000.132  000.132: sourcing /home/tom1484/.config/nvim/plugged/far.vim/plugin/far.vim
+042.535  000.475  000.475: sourcing /home/tom1484/.config/nvim/plugged/fzf/plugin/fzf.vim
+042.743  000.166  000.166: sourcing /home/tom1484/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+045.126  002.350  002.350: sourcing /home/tom1484/.config/nvim/plugged/distant.nvim/plugin/distant.vim
+045.266  000.097  000.097: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+045.577  000.279  000.279: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/plugin/prettier.vim
+045.625  000.017  000.017: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/plugin/anyfold.vim
+045.760  000.108  000.108: sourcing /home/tom1484/.config/nvim/plugged/vim-easy-align/plugin/easy_align.vim
+045.922  000.135  000.135: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+046.189  000.132  000.132: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+046.204  000.006  000.006: sourcing /usr/share/nvim/runtime/plugin/health.vim
+046.260  000.047  000.047: sourcing /usr/share/nvim/runtime/plugin/man.vim
+046.604  000.178  000.178: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+046.646  000.379  000.201: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+046.763  000.110  000.110: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+047.220  000.449  000.449: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+048.069  000.219  000.219: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+048.470  000.196  000.196: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+048.581  001.163  000.748: sourcing /home/tom1484/.local/share/nvim/rplugin.vim
+048.592  001.341  000.178: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+049.158  000.546  000.546: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+049.241  000.044  000.044: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+049.709  000.455  000.455: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+049.874  000.141  000.141: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+049.914  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+050.195  000.269  000.269: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+050.915  001.807: loading rtp plugins
+051.015  000.100: loading packages
+051.035  000.020: loading after plugins
+051.051  000.016: inits 3
+052.853  001.802: reading ShaDa
+059.002  004.554  004.554: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/autoload/arduino.vim
+059.124  000.044  000.044: sourcing /home/tom1484/.cache/arduino_cache.vim
+269.059  214.670  210.072: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+270.631  000.269  000.269: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/LaTeXtoUnicode.vim
+271.240  000.519  000.519: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/julia_latex_symbols.vim
+280.378  000.293  000.293: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/autoload/anyfold.vim
+289.356  001.053  001.053: sourcing /usr/share/nvim/runtime/syntax/c.vim
+289.612  001.368  000.314: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+289.669  001.550  000.182: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+289.776  000.016  000.016: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+290.919  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+293.033  001.006  001.006: sourcing /usr/share/nvim/runtime/syntax/c.vim
+293.267  001.302  000.296: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+293.330  001.423  000.121: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+293.430  000.012  000.012: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+293.682  022.071: opening buffers
+294.110  000.098  000.098: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+294.663  000.255  000.255: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+295.068  000.032  000.032: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+295.400  000.126  000.126: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+295.857  000.686  000.560: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/darcula.vim
+298.868  004.115: BufEnter autocommands
+298.876  000.008: editing files in windows
+299.086  000.210: VimEnter autocommands
+299.089  000.003: UIEnter autocommands
+299.090  000.001: before starting main loop
+302.245  003.155: first screen update
+302.248  000.003: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.005  000.005: --- NVIM STARTING ---
+000.276  000.270: locale set
+000.523  000.247: inits 1
+000.531  000.008: window checked
+000.566  000.035: parsing arguments
+002.206  001.639: init lua interpreter
+002.437  000.231: expanding arguments
+002.456  000.019: inits 2
+002.785  000.329: init highlight
+002.786  000.001: waiting for UI
+003.650  000.864: done waiting for UI
+003.677  000.027: init screen for UI
+003.703  000.025: init default mappings
+003.736  000.034: init default autocommands
+004.044  000.052  000.052: sourcing /usr/share/nvim/runtime/ftplugin.vim
+004.085  000.023  000.023: sourcing /usr/share/nvim/runtime/indent.vim
+005.170  001.032  001.032: sourcing /home/tom1484/.local/share/nvim/site/autoload/plug.vim
+009.806  000.107  000.107: sourcing /usr/share/nvim/runtime/filetype.lua
+015.131  000.022  000.022: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftdetect/arduino.vim
+015.191  000.037  000.037: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/ftdetect/julia.vim
+015.293  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/css.vim
+015.309  000.010  000.010: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/graphql.vim
+015.323  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/html.vim
+015.336  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/javascript.vim
+015.348  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/json.vim
+015.359  000.005  000.005: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/less.vim
+015.370  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/lua.vim
+015.389  000.014  000.014: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/markdown.vim
+015.400  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/php.vim
+015.412  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/ruby.vim
+015.426  000.007  000.007: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/scss.vim
+015.439  000.007  000.007: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/svelte.vim
+015.453  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/typescript.vim
+015.465  000.007  000.007: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/vue.vim
+015.477  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/xml.vim
+015.490  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/yaml.vim
+015.637  005.811  005.631: sourcing /usr/share/nvim/runtime/filetype.vim
+015.695  000.007  000.007: sourcing /usr/share/nvim/runtime/ftplugin.vim
+015.759  000.008  000.008: sourcing /usr/share/nvim/runtime/indent.vim
+015.961  000.096  000.096: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.076  000.292  000.196: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+016.331  000.065  000.065: sourcing /home/tom1484/.config/nvim/config/plugin/coc.nvim.vim
+016.382  000.016  000.016: sourcing /home/tom1484/.config/nvim/config/plugin/expand-region.vim
+016.639  000.161  000.161: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+016.755  000.354  000.193: sourcing /home/tom1484/.config/nvim/config/plugin/expand_region.vim
+016.810  000.027  000.027: sourcing /home/tom1484/.config/nvim/config/plugin/far.vim.vim
+016.902  000.069  000.069: sourcing /home/tom1484/.config/nvim/config/plugin/fzf.vim
+016.954  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/lightline.vim.vim
+017.024  000.042  000.042: sourcing /home/tom1484/.config/nvim/config/plugin/pear-tree.vim
+017.072  000.028  000.028: sourcing /home/tom1484/.config/nvim/config/plugin/tagbar.vim
+017.139  000.048  000.048: sourcing /home/tom1484/.config/nvim/config/plugin/vim-airline.vim
+017.184  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/vim-anyfold.vim
+017.247  000.013  000.013: sourcing /home/tom1484/.config/nvim/config/plugin/vim-commentary.vim
+017.283  000.013  000.013: sourcing /home/tom1484/.config/nvim/config/plugin/vim-eazy-align.vim
+017.342  000.031  000.031: sourcing /home/tom1484/.config/nvim/config/plugin/vim-tmux-navigator.vim
+017.352  013.229  005.242: sourcing /home/tom1484/.config/nvim/config/plugin.vim
+017.478  000.114  000.114: sourcing /home/tom1484/.config/nvim/config/keymap.vim
+020.712  000.204  000.204: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+020.859  000.080  000.080: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+020.927  000.449  000.165: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+021.166  000.140  000.140: sourcing /usr/share/nvim/runtime/filetype.lua
+021.304  000.019  000.019: sourcing /usr/share/nvim/runtime/filetype.vim
+021.412  000.011  000.011: sourcing /usr/share/nvim/runtime/ftplugin.vim
+021.498  000.010  000.010: sourcing /usr/share/nvim/runtime/indent.vim
+030.649  008.770  008.770: sourcing /home/tom1484/.config/nvim/plugged/vim-code-dark/colors/codedark.vim
+030.730  013.241  003.843: sourcing /home/tom1484/.config/nvim/config/general.vim
+030.736  026.625  000.040: sourcing /home/tom1484/.config/nvim/init.vim
+030.743  000.307: sourcing vimrc file(s)
+031.041  000.063  000.063: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+031.336  000.266  000.266: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+031.576  000.123  000.123: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+037.993  007.106  006.654: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+040.031  001.955  001.955: sourcing /home/tom1484/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+041.092  000.974  000.974: sourcing /home/tom1484/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+041.390  000.123  000.123: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+041.666  000.093  000.093: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+043.024  001.889  001.673: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+043.574  000.347  000.347: sourcing /home/tom1484/.config/nvim/plugged/pear-tree/plugin/pear-tree.vim
+043.811  000.185  000.185: sourcing /home/tom1484/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+044.070  000.210  000.210: sourcing /home/tom1484/.config/nvim/plugged/far.vim/plugin/far.vim
+044.839  000.722  000.722: sourcing /home/tom1484/.config/nvim/plugged/fzf/plugin/fzf.vim
+045.180  000.256  000.256: sourcing /home/tom1484/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+048.432  003.206  003.206: sourcing /home/tom1484/.config/nvim/plugged/distant.nvim/plugin/distant.vim
+048.641  000.149  000.149: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+049.141  000.452  000.452: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/plugin/prettier.vim
+049.230  000.031  000.031: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/plugin/anyfold.vim
+049.460  000.184  000.184: sourcing /home/tom1484/.config/nvim/plugged/vim-easy-align/plugin/easy_align.vim
+049.942  000.380  000.380: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+050.562  000.319  000.319: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+050.599  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+050.723  000.110  000.110: sourcing /usr/share/nvim/runtime/plugin/man.vim
+051.532  000.374  000.374: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+051.652  000.914  000.541: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+051.919  000.249  000.249: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+052.493  000.557  000.557: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+053.397  000.201  000.201: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+053.679  000.130  000.130: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+053.810  001.139  000.808: sourcing /home/tom1484/.local/share/nvim/rplugin.vim
+053.824  001.310  000.172: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+054.235  000.391  000.391: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+054.276  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+054.586  000.300  000.300: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+054.665  000.066  000.066: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+054.725  000.031  000.031: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+055.093  000.352  000.352: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+055.541  002.116: loading rtp plugins
+055.608  000.067: loading packages
+055.622  000.014: loading after plugins
+055.633  000.011: inits 3
+056.720  001.087: reading ShaDa
+060.493  002.709  002.709: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/autoload/arduino.vim
+060.594  000.040  000.040: sourcing /home/tom1484/.cache/arduino_cache.vim
+285.003  227.257  224.508: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+286.394  000.325  000.325: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/LaTeXtoUnicode.vim
+286.940  000.487  000.487: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/julia_latex_symbols.vim
+296.760  000.288  000.288: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/autoload/anyfold.vim
+305.540  001.167  001.167: sourcing /usr/share/nvim/runtime/syntax/c.vim
+305.836  001.529  000.362: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+305.900  001.716  000.188: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+306.009  000.016  000.016: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+307.316  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+309.597  001.058  001.058: sourcing /usr/share/nvim/runtime/syntax/c.vim
+309.847  001.362  000.304: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+309.909  001.489  000.127: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+310.013  000.013  000.013: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+310.288  021.968: opening buffers
+310.743  000.135  000.135: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+311.344  000.283  000.283: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+311.777  000.039  000.039: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+312.161  000.143  000.143: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+312.680  000.785  000.642: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/darcula.vim
+315.467  003.936: BufEnter autocommands
+315.476  000.010: editing files in windows
+315.824  000.348: VimEnter autocommands
+315.829  000.006: UIEnter autocommands
+315.831  000.002: before starting main loop
+319.615  003.784: first screen update
+319.621  000.006: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- NVIM STARTING ---
+000.359  000.352: locale set
+000.655  000.296: inits 1
+000.665  000.010: window checked
+000.707  000.042: parsing arguments
+002.899  002.192: init lua interpreter
+003.144  000.245: expanding arguments
+003.168  000.023: inits 2
+003.632  000.464: init highlight
+003.633  000.002: waiting for UI
+004.707  001.074: done waiting for UI
+004.736  000.029: init screen for UI
+004.762  000.027: init default mappings
+004.810  000.047: init default autocommands
+005.232  000.076  000.076: sourcing /usr/share/nvim/runtime/ftplugin.vim
+005.286  000.033  000.033: sourcing /usr/share/nvim/runtime/indent.vim
+006.633  001.267  001.267: sourcing /home/tom1484/.local/share/nvim/site/autoload/plug.vim
+010.389  000.080  000.080: sourcing /usr/share/nvim/runtime/filetype.lua
+015.693  000.024  000.024: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftdetect/arduino.vim
+015.761  000.042  000.042: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/ftdetect/julia.vim
+015.867  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/css.vim
+015.882  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/graphql.vim
+015.896  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/html.vim
+015.910  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/javascript.vim
+015.922  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/json.vim
+015.933  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/less.vim
+015.945  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/lua.vim
+015.964  000.014  000.014: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/markdown.vim
+015.975  000.005  000.005: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/php.vim
+015.986  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/ruby.vim
+015.998  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/scss.vim
+016.011  000.007  000.007: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/svelte.vim
+016.025  000.007  000.007: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/typescript.vim
+016.038  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/vue.vim
+016.054  000.006  000.006: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/xml.vim
+016.068  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/yaml.vim
+016.227  005.824  005.639: sourcing /usr/share/nvim/runtime/filetype.vim
+016.287  000.008  000.008: sourcing /usr/share/nvim/runtime/ftplugin.vim
+016.337  000.005  000.005: sourcing /usr/share/nvim/runtime/indent.vim
+016.485  000.067  000.067: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.580  000.221  000.154: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+016.743  000.043  000.043: sourcing /home/tom1484/.config/nvim/config/plugin/coc.nvim.vim
+016.776  000.011  000.011: sourcing /home/tom1484/.config/nvim/config/plugin/expand-region.vim
+017.015  000.158  000.158: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+017.126  000.334  000.176: sourcing /home/tom1484/.config/nvim/config/plugin/expand_region.vim
+017.171  000.025  000.025: sourcing /home/tom1484/.config/nvim/config/plugin/far.vim.vim
+017.249  000.053  000.053: sourcing /home/tom1484/.config/nvim/config/plugin/fzf.vim
+017.285  000.009  000.009: sourcing /home/tom1484/.config/nvim/config/plugin/lightline.vim.vim
+017.341  000.033  000.033: sourcing /home/tom1484/.config/nvim/config/plugin/pear-tree.vim
+017.380  000.023  000.023: sourcing /home/tom1484/.config/nvim/config/plugin/tagbar.vim
+017.408  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/vim-airline.vim
+017.431  000.008  000.008: sourcing /home/tom1484/.config/nvim/config/plugin/vim-anyfold.vim
+017.479  000.009  000.009: sourcing /home/tom1484/.config/nvim/config/plugin/vim-commentary.vim
+017.501  000.008  000.008: sourcing /home/tom1484/.config/nvim/config/plugin/vim-eazy-align.vim
+017.569  000.029  000.029: sourcing /home/tom1484/.config/nvim/config/plugin/vim-tmux-navigator.vim
+017.579  012.238  004.234: sourcing /home/tom1484/.config/nvim/config/plugin.vim
+017.681  000.092  000.092: sourcing /home/tom1484/.config/nvim/config/keymap.vim
+020.806  000.240  000.240: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+020.950  000.079  000.079: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+021.012  000.481  000.161: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+021.202  000.093  000.093: sourcing /usr/share/nvim/runtime/filetype.lua
+021.223  000.010  000.010: sourcing /usr/share/nvim/runtime/filetype.vim
+021.285  000.006  000.006: sourcing /usr/share/nvim/runtime/ftplugin.vim
+021.341  000.006  000.006: sourcing /usr/share/nvim/runtime/indent.vim
+030.926  009.437  009.437: sourcing /home/tom1484/.config/nvim/plugged/vim-code-dark/colors/codedark.vim
+031.025  013.335  003.304: sourcing /home/tom1484/.config/nvim/config/general.vim
+031.033  025.710  000.045: sourcing /home/tom1484/.config/nvim/init.vim
+031.038  000.409: sourcing vimrc file(s)
+031.329  000.062  000.062: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+031.618  000.260  000.260: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+031.863  000.126  000.126: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+037.136  005.963  005.515: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+039.646  002.434  002.434: sourcing /home/tom1484/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+040.871  001.094  001.094: sourcing /home/tom1484/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+041.177  000.121  000.121: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+041.450  000.092  000.092: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+042.471  001.552  001.339: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+042.743  000.207  000.207: sourcing /home/tom1484/.config/nvim/plugged/pear-tree/plugin/pear-tree.vim
+042.917  000.131  000.131: sourcing /home/tom1484/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+043.082  000.133  000.133: sourcing /home/tom1484/.config/nvim/plugged/far.vim/plugin/far.vim
+043.604  000.491  000.491: sourcing /home/tom1484/.config/nvim/plugged/fzf/plugin/fzf.vim
+043.843  000.179  000.179: sourcing /home/tom1484/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+046.416  002.539  002.539: sourcing /home/tom1484/.config/nvim/plugged/distant.nvim/plugin/distant.vim
+046.617  000.133  000.133: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+047.078  000.387  000.387: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/plugin/prettier.vim
+047.139  000.025  000.025: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/plugin/anyfold.vim
+047.286  000.120  000.120: sourcing /home/tom1484/.config/nvim/plugged/vim-easy-align/plugin/easy_align.vim
+047.409  000.094  000.094: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+047.689  000.146  000.146: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+047.710  000.008  000.008: sourcing /usr/share/nvim/runtime/plugin/health.vim
+047.773  000.053  000.053: sourcing /usr/share/nvim/runtime/plugin/man.vim
+048.158  000.193  000.193: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+048.206  000.426  000.234: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+048.328  000.113  000.113: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+048.674  000.337  000.337: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+049.272  000.134  000.134: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+049.507  000.104  000.104: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+049.573  000.757  000.520: sourcing /home/tom1484/.local/share/nvim/rplugin.vim
+049.578  000.878  000.121: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+049.731  000.144  000.144: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+049.761  000.018  000.018: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+049.872  000.103  000.103: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+049.937  000.058  000.058: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+049.957  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+050.072  000.109  000.109: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+050.403  001.477: loading rtp plugins
+050.454  000.052: loading packages
+050.465  000.011: loading after plugins
+050.473  000.009: inits 3
+051.493  001.019: reading ShaDa
+055.933  003.441  003.441: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/autoload/arduino.vim
+056.060  000.054  000.054: sourcing /home/tom1484/.cache/arduino_cache.vim
+227.090  174.638  171.142: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+229.002  000.533  000.533: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/LaTeXtoUnicode.vim
+229.686  000.526  000.526: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/julia_latex_symbols.vim
+239.005  000.303  000.303: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/autoload/anyfold.vim
+247.596  000.988  000.988: sourcing /usr/share/nvim/runtime/syntax/c.vim
+247.817  001.261  000.273: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+247.869  001.419  000.158: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+247.965  000.014  000.014: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+249.155  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+251.162  000.923  000.923: sourcing /usr/share/nvim/runtime/syntax/c.vim
+251.422  001.231  000.308: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+251.478  001.343  000.112: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+251.567  000.011  000.011: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+251.806  021.519: opening buffers
+252.234  000.099  000.099: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+252.781  000.240  000.240: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+253.143  000.030  000.030: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+253.508  000.131  000.131: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+253.962  000.713  000.582: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/darcula.vim
+256.304  003.416: BufEnter autocommands
+256.310  000.006: editing files in windows
+256.489  000.179: VimEnter autocommands
+256.492  000.002: UIEnter autocommands
+256.493  000.002: before starting main loop
+259.283  002.789: first screen update
+259.298  000.015: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.302  000.296: locale set
+000.567  000.265: inits 1
+000.578  000.011: window checked
+000.626  000.048: parsing arguments
+002.324  001.698: init lua interpreter
+002.560  000.236: expanding arguments
+002.579  000.019: inits 2
+002.906  000.326: init highlight
+002.907  000.001: waiting for UI
+003.899  000.992: done waiting for UI
+003.910  000.011: init screen for UI
+003.928  000.018: init default mappings
+003.965  000.037: init default autocommands
+004.297  000.060  000.060: sourcing /usr/share/nvim/runtime/ftplugin.vim
+004.341  000.026  000.026: sourcing /usr/share/nvim/runtime/indent.vim
+005.456  001.060  001.060: sourcing /home/tom1484/.local/share/nvim/site/autoload/plug.vim
+008.318  000.079  000.079: sourcing /usr/share/nvim/runtime/filetype.lua
+014.695  000.027  000.027: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftdetect/arduino.vim
+014.773  000.053  000.053: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/ftdetect/julia.vim
+014.896  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/css.vim
+014.915  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/graphql.vim
+014.941  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/html.vim
+014.962  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/javascript.vim
+014.979  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/json.vim
+014.996  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/less.vim
+015.013  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/lua.vim
+015.040  000.018  000.018: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/markdown.vim
+015.058  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/php.vim
+015.077  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/ruby.vim
+015.095  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/scss.vim
+015.115  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/svelte.vim
+015.136  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/typescript.vim
+015.165  000.020  000.020: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/vue.vim
+015.182  000.008  000.008: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/xml.vim
+015.203  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/yaml.vim
+015.544  007.213  006.953: sourcing /usr/share/nvim/runtime/filetype.vim
+015.691  000.019  000.019: sourcing /usr/share/nvim/runtime/ftplugin.vim
+015.806  000.014  000.014: sourcing /usr/share/nvim/runtime/indent.vim
+016.169  000.168  000.168: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.292  000.411  000.243: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+016.473  000.046  000.046: sourcing /home/tom1484/.config/nvim/config/plugin/coc.nvim.vim
+016.509  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/expand-region.vim
+016.825  000.228  000.228: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+016.977  000.451  000.223: sourcing /home/tom1484/.config/nvim/config/plugin/expand_region.vim
+017.039  000.031  000.031: sourcing /home/tom1484/.config/nvim/config/plugin/far.vim.vim
+017.130  000.064  000.064: sourcing /home/tom1484/.config/nvim/config/plugin/fzf.vim
+017.182  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/lightline.vim.vim
+017.256  000.045  000.045: sourcing /home/tom1484/.config/nvim/config/plugin/pear-tree.vim
+017.309  000.029  000.029: sourcing /home/tom1484/.config/nvim/config/plugin/tagbar.vim
+017.346  000.016  000.016: sourcing /home/tom1484/.config/nvim/config/plugin/vim-airline.vim
+017.377  000.010  000.010: sourcing /home/tom1484/.config/nvim/config/plugin/vim-anyfold.vim
+017.436  000.012  000.012: sourcing /home/tom1484/.config/nvim/config/plugin/vim-commentary.vim
+017.465  000.010  000.010: sourcing /home/tom1484/.config/nvim/config/plugin/vim-eazy-align.vim
+017.526  000.035  000.035: sourcing /home/tom1484/.config/nvim/config/plugin/vim-tmux-navigator.vim
+017.536  013.157  003.586: sourcing /home/tom1484/.config/nvim/config/plugin.vim
+017.671  000.121  000.121: sourcing /home/tom1484/.config/nvim/config/keymap.vim
+021.187  000.259  000.259: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+021.339  000.083  000.083: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+021.410  000.533  000.191: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+021.612  000.107  000.107: sourcing /usr/share/nvim/runtime/filetype.lua
+021.633  000.010  000.010: sourcing /usr/share/nvim/runtime/filetype.vim
+021.698  000.007  000.007: sourcing /usr/share/nvim/runtime/ftplugin.vim
+021.757  000.006  000.006: sourcing /usr/share/nvim/runtime/indent.vim
+030.362  008.419  008.419: sourcing /home/tom1484/.config/nvim/plugged/vim-code-dark/colors/codedark.vim
+030.450  012.767  003.686: sourcing /home/tom1484/.config/nvim/config/general.vim
+030.457  026.089  000.044: sourcing /home/tom1484/.config/nvim/init.vim
+030.462  000.321: sourcing vimrc file(s)
+030.740  000.059  000.059: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+031.055  000.287  000.287: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+031.316  000.132  000.132: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+037.096  006.504  006.026: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+039.752  002.555  002.555: sourcing /home/tom1484/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+041.149  001.333  001.333: sourcing /home/tom1484/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+041.552  000.173  000.173: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+041.954  000.163  000.163: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+043.249  002.046  001.710: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+043.581  000.247  000.247: sourcing /home/tom1484/.config/nvim/plugged/pear-tree/plugin/pear-tree.vim
+043.798  000.169  000.169: sourcing /home/tom1484/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+044.045  000.205  000.205: sourcing /home/tom1484/.config/nvim/plugged/far.vim/plugin/far.vim
+044.940  000.847  000.847: sourcing /home/tom1484/.config/nvim/plugged/fzf/plugin/fzf.vim
+045.279  000.263  000.263: sourcing /home/tom1484/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+049.478  004.152  004.152: sourcing /home/tom1484/.config/nvim/plugged/distant.nvim/plugin/distant.vim
+049.660  000.118  000.118: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+050.093  000.400  000.400: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/plugin/prettier.vim
+050.151  000.022  000.022: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/plugin/anyfold.vim
+050.356  000.141  000.141: sourcing /home/tom1484/.config/nvim/plugged/vim-easy-align/plugin/easy_align.vim
+050.549  000.159  000.159: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+050.845  000.144  000.144: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+050.862  000.008  000.008: sourcing /usr/share/nvim/runtime/plugin/health.vim
+050.924  000.054  000.054: sourcing /usr/share/nvim/runtime/plugin/man.vim
+051.341  000.195  000.195: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+051.388  000.456  000.261: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+051.509  000.113  000.113: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+051.852  000.335  000.335: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+052.410  000.133  000.133: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+052.644  000.108  000.108: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+052.709  000.727  000.486: sourcing /home/tom1484/.local/share/nvim/rplugin.vim
+052.713  000.842  000.114: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+052.832  000.109  000.109: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+052.856  000.016  000.016: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+052.981  000.118  000.118: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+053.120  000.125  000.125: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+053.150  000.018  000.018: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+053.366  000.191  000.191: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+053.684  001.532: loading rtp plugins
+053.734  000.050: loading packages
+053.745  000.011: loading after plugins
+053.753  000.008: inits 3
+054.776  001.023: reading ShaDa
+058.574  002.766  002.766: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/autoload/arduino.vim
+058.672  000.041  000.041: sourcing /home/tom1484/.cache/arduino_cache.vim
+320.742  264.973  262.167: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+321.995  000.298  000.298: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/LaTeXtoUnicode.vim
+322.434  000.382  000.382: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/julia_latex_symbols.vim
+332.750  000.299  000.299: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/autoload/anyfold.vim
+341.747  000.984  000.984: sourcing /usr/share/nvim/runtime/syntax/c.vim
+341.973  001.265  000.281: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+342.024  001.442  000.177: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+342.118  000.013  000.013: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+343.385  000.010  000.010: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+345.504  001.025  001.025: sourcing /usr/share/nvim/runtime/syntax/c.vim
+345.810  001.381  000.356: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+345.871  001.501  000.120: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+345.972  000.013  000.013: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+346.226  022.520: opening buffers
+346.742  000.127  000.127: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+347.287  000.265  000.265: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+347.711  000.037  000.037: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+348.076  000.134  000.134: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+348.528  000.704  000.570: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/darcula.vim
+351.748  004.390: BufEnter autocommands
+351.756  000.008: editing files in windows
+351.988  000.232: VimEnter autocommands
+351.991  000.003: UIEnter autocommands
+351.992  000.002: before starting main loop
+354.930  002.938: first screen update
+354.934  000.004: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- NVIM STARTING ---
+000.407  000.400: locale set
+000.754  000.346: inits 1
+000.765  000.012: window checked
+000.812  000.047: parsing arguments
+003.080  002.268: init lua interpreter
+003.339  000.258: expanding arguments
+003.365  000.026: inits 2
+003.895  000.530: init highlight
+003.897  000.002: waiting for UI
+005.092  001.195: done waiting for UI
+005.116  000.024: init screen for UI
+005.140  000.024: init default mappings
+005.178  000.038: init default autocommands
+005.561  000.069  000.069: sourcing /usr/share/nvim/runtime/ftplugin.vim
+005.616  000.032  000.032: sourcing /usr/share/nvim/runtime/indent.vim
+007.222  001.530  001.530: sourcing /home/tom1484/.local/share/nvim/site/autoload/plug.vim
+011.475  000.179  000.179: sourcing /usr/share/nvim/runtime/filetype.lua
+027.559  000.036  000.036: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftdetect/arduino.vim
+027.662  000.062  000.062: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/ftdetect/julia.vim
+027.887  000.018  000.018: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/css.vim
+027.912  000.014  000.014: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/graphql.vim
+027.935  000.013  000.013: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/html.vim
+027.956  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/javascript.vim
+027.975  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/json.vim
+027.993  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/less.vim
+028.012  000.010  000.010: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/lua.vim
+028.044  000.023  000.023: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/markdown.vim
+028.063  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/php.vim
+028.082  000.010  000.010: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/ruby.vim
+028.103  000.012  000.012: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/scss.vim
+028.124  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/svelte.vim
+028.146  000.013  000.013: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/typescript.vim
+028.167  000.011  000.011: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/vue.vim
+028.185  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/xml.vim
+028.213  000.013  000.013: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/ftdetect/yaml.vim
+028.502  016.998  016.704: sourcing /usr/share/nvim/runtime/filetype.vim
+028.640  000.013  000.013: sourcing /usr/share/nvim/runtime/ftplugin.vim
+028.740  000.012  000.012: sourcing /usr/share/nvim/runtime/indent.vim
+028.963  000.098  000.098: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+029.058  000.284  000.186: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+029.283  000.057  000.057: sourcing /home/tom1484/.config/nvim/config/plugin/coc.nvim.vim
+029.328  000.016  000.016: sourcing /home/tom1484/.config/nvim/config/plugin/expand-region.vim
+038.624  009.175  009.175: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+038.868  009.516  000.341: sourcing /home/tom1484/.config/nvim/config/plugin/expand_region.vim
+039.006  000.055  000.055: sourcing /home/tom1484/.config/nvim/config/plugin/far.vim.vim
+039.138  000.092  000.092: sourcing /home/tom1484/.config/nvim/config/plugin/fzf.vim
+039.209  000.015  000.015: sourcing /home/tom1484/.config/nvim/config/plugin/lightline.vim.vim
+039.303  000.056  000.056: sourcing /home/tom1484/.config/nvim/config/plugin/pear-tree.vim
+039.528  000.194  000.194: sourcing /home/tom1484/.config/nvim/config/plugin/tagbar.vim
+039.593  000.022  000.022: sourcing /home/tom1484/.config/nvim/config/plugin/vim-airline.vim
+039.649  000.025  000.025: sourcing /home/tom1484/.config/nvim/config/plugin/vim-anyfold.vim
+039.740  000.016  000.016: sourcing /home/tom1484/.config/nvim/config/plugin/vim-commentary.vim
+039.781  000.011  000.011: sourcing /home/tom1484/.config/nvim/config/plugin/vim-eazy-align.vim
+039.903  000.089  000.089: sourcing /home/tom1484/.config/nvim/config/plugin/vim-tmux-navigator.vim
+039.922  034.254  005.074: sourcing /home/tom1484/.config/nvim/config/plugin.vim
+040.167  000.224  000.224: sourcing /home/tom1484/.config/nvim/config/keymap.vim
+044.431  000.348  000.348: sourcing /usr/share/nvim/runtime/syntax/nosyntax.vim
+044.662  000.122  000.122: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+044.757  000.725  000.256: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+045.059  000.161  000.161: sourcing /usr/share/nvim/runtime/filetype.lua
+045.094  000.016  000.016: sourcing /usr/share/nvim/runtime/filetype.vim
+045.191  000.009  000.009: sourcing /usr/share/nvim/runtime/ftplugin.vim
+045.276  000.009  000.009: sourcing /usr/share/nvim/runtime/indent.vim
+063.924  018.362  018.362: sourcing /home/tom1484/.config/nvim/plugged/vim-code-dark/colors/codedark.vim
+064.010  023.822  004.539: sourcing /home/tom1484/.config/nvim/config/general.vim
+064.018  058.365  000.065: sourcing /home/tom1484/.config/nvim/init.vim
+064.023  000.379: sourcing vimrc file(s)
+064.297  000.061  000.061: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+064.617  000.291  000.291: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/util.vim
+064.864  000.126  000.126: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/autoload/coc/client.vim
+070.119  005.973  005.495: sourcing /home/tom1484/.config/nvim/plugged/coc.nvim/plugin/coc.vim
+072.853  002.618  002.618: sourcing /home/tom1484/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+074.766  001.815  001.815: sourcing /home/tom1484/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+075.274  000.170  000.170: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+075.717  000.107  000.107: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+076.937  002.041  001.765: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+077.440  000.415  000.415: sourcing /home/tom1484/.config/nvim/plugged/pear-tree/plugin/pear-tree.vim
+077.730  000.238  000.238: sourcing /home/tom1484/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+078.006  000.222  000.222: sourcing /home/tom1484/.config/nvim/plugged/far.vim/plugin/far.vim
+079.004  000.950  000.950: sourcing /home/tom1484/.config/nvim/plugged/fzf/plugin/fzf.vim
+079.380  000.302  000.302: sourcing /home/tom1484/.config/nvim/plugged/vim-tmux-navigator/plugin/tmux_navigator.vim
+083.249  003.823  003.823: sourcing /home/tom1484/.config/nvim/plugged/distant.nvim/plugin/distant.vim
+083.478  000.153  000.153: sourcing /home/tom1484/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+084.105  000.581  000.581: sourcing /home/tom1484/.config/nvim/plugged/vim-prettier/plugin/prettier.vim
+084.333  000.036  000.036: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/plugin/anyfold.vim
+084.567  000.193  000.193: sourcing /home/tom1484/.config/nvim/plugged/vim-easy-align/plugin/easy_align.vim
+084.868  000.255  000.255: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+085.330  000.253  000.253: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+085.357  000.010  000.010: sourcing /usr/share/nvim/runtime/plugin/health.vim
+085.448  000.080  000.080: sourcing /usr/share/nvim/runtime/plugin/man.vim
+086.019  000.269  000.269: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+086.091  000.633  000.363: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+086.286  000.183  000.183: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+087.217  000.918  000.918: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+090.336  000.276  000.276: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+090.756  000.205  000.205: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+090.871  003.339  002.858: sourcing /home/tom1484/.local/share/nvim/rplugin.vim
+090.880  003.592  000.253: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+091.346  000.447  000.447: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+091.407  000.037  000.037: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+091.806  000.385  000.385: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+091.941  000.112  000.112: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+091.980  000.021  000.021: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+092.294  000.303  000.303: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+092.887  002.270: loading rtp plugins
+092.987  000.100: loading packages
+093.009  000.022: loading after plugins
+093.025  000.016: inits 3
+094.477  001.452: reading ShaDa
+099.798  003.778  003.778: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/autoload/arduino.vim
+099.941  000.056  000.056: sourcing /home/tom1484/.cache/arduino_cache.vim
+289.727  193.770  189.936: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+291.255  000.292  000.292: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/LaTeXtoUnicode.vim
+291.670  000.348  000.348: sourcing /home/tom1484/.config/nvim/plugged/julia-vim/autoload/julia_latex_symbols.vim
+299.862  000.270  000.270: sourcing /home/tom1484/.config/nvim/plugged/vim-anyfold/autoload/anyfold.vim
+308.204  001.042  001.042: sourcing /usr/share/nvim/runtime/syntax/c.vim
+308.447  001.339  000.296: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+308.502  001.506  000.168: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+308.668  000.023  000.023: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+309.905  000.009  000.009: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/ftplugin/arduino.vim
+311.990  000.949  000.949: sourcing /usr/share/nvim/runtime/syntax/c.vim
+312.188  001.194  000.245: sourcing /usr/share/nvim/runtime/syntax/cpp.vim
+312.239  001.301  000.108: sourcing /home/tom1484/.config/nvim/plugged/vim-arduino/syntax/arduino.vim
+312.335  000.012  000.012: sourcing /usr/share/nvim/runtime/syntax/arduino.vim
+312.574  020.566: opening buffers
+313.083  000.104  000.104: sourcing /home/tom1484/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+313.627  000.258  000.258: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+314.059  000.035  000.035: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+314.415  000.130  000.130: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+314.902  000.735  000.605: sourcing /home/tom1484/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/darcula.vim
+317.272  003.566: BufEnter autocommands
+317.279  000.007: editing files in windows
+317.465  000.186: VimEnter autocommands
+317.467  000.002: UIEnter autocommands
+317.468  000.001: before starting main loop
+320.036  002.568: first screen update
+320.041  000.005: --- NVIM STARTED ---
